@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Modules - CAPM Exam Prep</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>CAPM Mastery</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="learning-fixed.html" class="active">Learn</a>
+                <a href="quiz.html">Quiz</a>
+                <a href="flashcards.html">Flashcards</a>
+                <a href="mock-exam.html">Mock Exam</a>
+            </div>
+            <div class="nav-actions">
+                <button class="search-btn" id="searchBtn">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="user-profile">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="learning-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>Knowledge Areas</h3>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#integration" class="domain-link active" data-domain="integration">
+                    <i class="fas fa-project-diagram"></i>
+                    <span>Integration Management</span>
+                </a>
+                <a href="#scope" class="domain-link" data-domain="scope">
+                    <i class="fas fa-bullseye"></i>
+                    <span>Scope Management</span>
+                </a>
+                <a href="#schedule" class="domain-link" data-domain="schedule">
+                    <i class="fas fa-clock"></i>
+                    <span>Schedule Management</span>
+                </a>
+                <a href="#cost" class="domain-link" data-domain="cost">
+                    <i class="fas fa-dollar-sign"></i>
+                    <span>Cost Management</span>
+                </a>
+                <a href="#quality" class="domain-link" data-domain="quality">
+                    <i class="fas fa-award"></i>
+                    <span>Quality Management</span>
+                </a>
+                <a href="#resource" class="domain-link" data-domain="resource">
+                    <i class="fas fa-users"></i>
+                    <span>Resource Management</span>
+                </a>
+                <a href="#communication" class="domain-link" data-domain="communication">
+                    <i class="fas fa-comments"></i>
+                    <span>Communication Management</span>
+                </a>
+                <a href="#risk" class="domain-link" data-domain="risk">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <span>Risk Management</span>
+                </a>
+                <a href="#procurement" class="domain-link" data-domain="procurement">
+                    <i class="fas fa-handshake"></i>
+                    <span>Procurement Management</span>
+                </a>
+                <a href="#stakeholder" class="domain-link" data-domain="stakeholder">
+                    <i class="fas fa-user-friends"></i>
+                    <span>Stakeholder Management</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="learning-main" id="learningContent">
+            <!-- Content will be loaded dynamically -->
+            <div class="loading-spinner">
+                <i class="fas fa-spinner fa-spin"></i>
+                <p>Loading content...</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Simplified learning module with dynamic content loading
+        const domainContent = {
+            integration: `
+                <div class="domain-header">
+                    <h1><i class="fas fa-project-diagram"></i> Integration Management</h1>
+                    <p class="domain-description">Coordinate all project elements to ensure they work together effectively</p>
+                </div>
+                <div class="module-card">
+                    <div class="module-header" onclick="toggleModule(this)">
+                        <h2>1. Overview & Key Concepts</h2>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="module-content">
+                        <p><strong>What is Project Integration Management?</strong></p>
+                        <p>Integration Management involves coordinating all aspects of the project to ensure they work together harmoniously.</p>
+                        <div class="key-points">
+                            <h3>Key Concepts:</h3>
+                            <ul>
+                                <li><strong>Project Charter:</strong> Formal authorization document</li>
+                                <li><strong>Project Management Plan:</strong> Comprehensive execution document</li>
+                                <li><strong>Change Control:</strong> Process for managing changes</li>
+                                <li><strong>Lessons Learned:</strong> Knowledge gained during project</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="module-actions">
+                    <button class="btn btn-secondary" onclick="markComplete('integration')">
+                        <i class="fas fa-check"></i> Mark as Complete
+                    </button>
+                    <a href="quiz.html?domain=integration" class="btn btn-primary">
+                        <i class="fas fa-question-circle"></i> Take Quiz
+                    </a>
+                </div>
+            `,
+            scope: `
+                <div class="domain-header">
+                    <h1><i class="fas fa-bullseye"></i> Scope Management</h1>
+                    <p class="domain-description">Define and control what is and is not included in the project</p>
+                </div>
+                <div class="module-card">
+                    <div class="module-header" onclick="toggleModule(this)">
+                        <h2>1. Overview & Key Concepts</h2>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="module-content">
+                        <p><strong>What is Project Scope Management?</strong></p>
+                        <p>Scope Management ensures the project includes all required work, and only the required work.</p>
+                        <div class="key-points">
+                            <h3>Key Concepts:</h3>
+                            <ul>
+                                <li><strong>Project Scope:</strong> The work performed to deliver a product</li>
+                                <li><strong>Product Scope:</strong> Features and functions of the product</li>
+                                <li><strong>WBS:</strong> Hierarchical decomposition of work</li>
+                                <li><strong>Scope Creep:</strong> Uncontrolled expansion of scope</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="module-actions">
+                    <button class="btn btn-secondary" onclick="markComplete('scope')">
+                        <i class="fas fa-check"></i> Mark as Complete
+                    </button>
+                    <a href="quiz.html?domain=scope" class="btn btn-primary">
+                        <i class="fas fa-question-circle"></i> Take Quiz
+                    </a>
+                </div>
+            `,
+            schedule: `
+                <div class="domain-header">
+                    <h1><i class="fas fa-clock"></i> Schedule Management</h1>
+                    <p class="domain-description">Plan, develop, manage, and control the project timeline</p>
+                </div>
+                <div class="module-card">
+                    <div class="module-header" onclick="toggleModule(this)">
+                        <h2>1. Overview & Key Concepts</h2>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="module-content">
+                        <p><strong>What is Project Schedule Management?</strong></p>
+                        <p>Schedule Management includes processes for timely project completion.</p>
+                        <div class="key-points">
+                            <h3>Key Concepts:</h3>
+                            <ul>
+                                <li><strong>Critical Path:</strong> Longest sequence (zero float)</li>
+                                <li><strong>Float/Slack:</strong> Time activity can be delayed</li>
+                                <li><strong>Fast-Tracking:</strong> Parallel activities (increases risk)</li>
+                                <li><strong>Crashing:</strong> Add resources (increases cost)</li>
+                            </ul>
+                        </div>
+                        <div class="formula-box">
+                            <h3>PERT Formula:</h3>
+                            <div class="formula">
+                                <strong>PERT = (O + 4M + P) / 6</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="module-actions">
+                    <button class="btn btn-secondary" onclick="markComplete('schedule')">
+                        <i class="fas fa-check"></i> Mark as Complete
+                    </button>
+                    <a href="quiz.html?domain=schedule" class="btn btn-primary">
+                        <i class="fas fa-question-circle"></i> Take Quiz
+                    </a>
+                </div>
+            `,
+            cost: `
+                <div class="domain-header">
+                    <h1><i class="fas fa-dollar-sign"></i> Cost Management</h1>
+                    <p class="domain-description">Plan, estimate, budget, and control costs</p>
+                </div>
+                <div class="module-card">
+                    <div class="module-header" onclick="toggleModule(this)">
+                        <h2>1. Earned Value Management (EVM)</h2>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="module-content">
+                        <p><strong>Key EVM Formulas:</strong></p>
+                        <div class="formula-box">
+                            <ul>
+                                <li><strong>CV = EV - AC</strong> (Cost Variance)</li>
+                                <li><strong>SV = EV - PV</strong> (Schedule Variance)</li>
+                                <li><strong>CPI = EV / AC</strong> (Cost Performance Index)</li>
+                                <li><strong>SPI = EV / PV</strong> (Schedule Performance Index)</li>
+                                <li><strong>EAC = BAC / CPI</strong> (Estimate at Completion)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="module-actions">
+                    <button class="btn btn-secondary" onclick="markComplete('cost')">
+                        <i class="fas fa-check"></i> Mark as Complete
+                    </button>
+                    <a href="quiz.html?domain=cost" class="btn btn-primary">
+                        <i class="fas fa-question-circle"></i> Take Quiz
+                    </a>
+                </div>
+            `,
+            quality: `
+                <div class="domain-header">
+                    <h1><i class="fas fa-award"></i> Quality Management</h1>
+                    <p class="domain-description">Incorporate quality policies and ensure requirements are met</p>
+                </div>
+                <div class="module-card">
+                    <div class="module-header" onclick="toggleModule(this)">
+                        <h2>1. Quality Concepts</h2>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="module-content">
+                        <div class="key-points">
+                            <h3>Key Concepts:</h3>
+                            <ul>
+                                <li><strong>Quality ≠ Grade</strong></li>
+                                <li><strong>Prevention > Inspection</strong></li>
+                                <li><strong>QA:</strong> Process-oriented (Manage Quality)</li>
+                                <li><strong>QC:</strong> Product-oriented (Control Quality)</li>
+                            </ul>
+                            <h3>Seven Basic Quality Tools:</h3>
+                            <ul>
+                                <li>Cause & Effect Diagram (Fishbone)</li>
+                                <li>Flowchart</li>
+                                <li>Pareto Chart (80/20 rule)</li>
+                                <li>Control Chart</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="module-actions">
+                    <button class="btn btn-secondary" onclick="markComplete('quality')">
+                        <i class="fas fa-check"></i> Mark as Complete
+                    </button>
+                    <a href="quiz.html?domain=quality" class="btn btn-primary">
+                        <i class="fas fa-question-circle"></i> Take Quiz
+                    </a>
+                </div>
+            `,
+            resource: `
+                <div class="domain-header">
+                    <h1><i class="fas fa-users"></i> Resource Management</h1>
+                    <p class="domain-description">Identify, acquire, and manage resources</p>
+                </div>
+                <div class="module-card">
+                    <div class="module-header" onclick="toggleModule(this)">
+                        <h2>1. Team Development & Conflict</h2>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="module-content">
+                        <div class="key-points">
+                            <h3>Tuckman's Stages:</h3>
+                            <ul>
+                                <li>Forming → Storming → Norming → Performing → Adjourning</li>
+                            </ul>
+                            <h3>Conflict Resolution (Best to Worst):</h3>
+                            <ul>
+                                <li>1. <strong>Collaborate</strong> (Win-Win) - BEST</li>
+                                <li>2. <strong>Compromise</strong> (Lose-Lose)</li>
+                                <li>3. <strong>Smooth</strong> (Temporary)</li>
+                                <li>4. <strong>Force</strong> (Win-Lose) - WORST</li>
+                                <li>5. <strong>Withdraw</strong> (Avoid)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="module-actions">
+                    <button class="btn btn-secondary" onclick="markComplete('resource')">
+                        <i class="fas fa-check"></i> Mark as Complete
+                    </button>
+                    <a href="quiz.html?domain=resource" class="btn btn-primary">
+                        <i class="fas fa-question-circle"></i> Take Quiz
+                    </a>
+                </div>
+            `,
+            communication: `
+                <div class="domain-header">
+                    <h1><i class="fas fa-comments"></i> Communication Management</h1>
+                    <p class="domain-description">Ensure timely and appropriate project information</p>
+                </div>
+                <div class="module-card">
+                    <div class="module-header" onclick="toggleModule(this)">
+                        <h2>1. Communication Channels</h2>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="module-content">
+                        <div class="formula-box">
+                            <h3>Communication Channels Formula:</h3>
+                            <div class="formula">
+                                <strong>Channels = n(n-1)/2</strong>
+                            </div>
+                            <p>Example: 5 people = 5(4)/2 = 10 channels</p>
+                        </div>
+                        <div class="key-points">
+                            <h3>Communication Methods:</h3>
+                            <ul>
+                                <li><strong>Interactive:</strong> Real-time (meetings)</li>
+                                <li><strong>Push:</strong> Sent to recipients (email)</li>
+                                <li><strong>Pull:</strong> Self-service (wiki)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="module-actions">
+                    <button class="btn btn-secondary" onclick="markComplete('communication')">
+                        <i class="fas fa-check"></i> Mark as Complete
+                    </button>
+                    <a href="quiz.html?domain=communication" class="btn btn-primary">
+                        <i class="fas fa-question-circle"></i> Take Quiz
+                    </a>
+                </div>
+            `,
+            risk: `
+                <div class="domain-header">
+                    <h1><i class="fas fa-exclamation-triangle"></i> Risk Management</h1>
+                    <p class="domain-description">Identify, analyze, and respond to project risks</p>
+                </div>
+                <div class="module-card">
+                    <div class="module-header" onclick="toggleModule(this)">
+                        <h2>1. Risk Response Strategies</h2>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="module-content">
+                        <div class="key-points">
+                            <h3>For THREATS (Negative Risks):</h3>
+                            <ul>
+                                <li><strong>Avoid:</strong> Eliminate the threat</li>
+                                <li><strong>Mitigate:</strong> Reduce probability/impact</li>
+                                <li><strong>Transfer:</strong> Shift to third party</li>
+                                <li><strong>Accept:</strong> Acknowledge but don't act</li>
+                            </ul>
+                            <h3>For OPPORTUNITIES (Positive Risks):</h3>
+                            <ul>
+                                <li><strong>Exploit:</strong> Ensure it happens</li>
+                                <li><strong>Enhance:</strong> Increase probability/impact</li>
+                                <li><strong>Share:</strong> Partner with others</li>
+                                <li><strong>Accept:</strong> Take advantage if it occurs</li>
+                            </ul>
+                        </div>
+                        <div class="formula-box">
+                            <h3>EMV Formula:</h3>
+                            <div class="formula">
+                                <strong>EMV = Probability × Impact</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="module-actions">
+                    <button class="btn btn-secondary" onclick="markComplete('risk')">
+                        <i class="fas fa-check"></i> Mark as Complete
+                    </button>
+                    <a href="quiz.html?domain=risk" class="btn btn-primary">
+                        <i class="fas fa-question-circle"></i> Take Quiz
+                    </a>
+                </div>
+            `,
+            procurement: `
+                <div class="domain-header">
+                    <h1><i class="fas fa-handshake"></i> Procurement Management</h1>
+                    <p class="domain-description">Purchase or acquire products and services</p>
+                </div>
+                <div class="module-card">
+                    <div class="module-header" onclick="toggleModule(this)">
+                        <h2>1. Contract Types</h2>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="module-content">
+                        <div class="key-points">
+                            <h3>Three Main Contract Types:</h3>
+                            <ul>
+                                <li><strong>Fixed Price (FP):</strong> Low buyer risk, High seller risk</li>
+                                <li><strong>Cost Reimbursable (CR):</strong> High buyer risk, Low seller risk</li>
+                                <li><strong>Time & Materials (T&M):</strong> Medium risk for both</li>
+                            </ul>
+                            <h3>Procurement Documents:</h3>
+                            <ul>
+                                <li><strong>RFP:</strong> Request for Proposal</li>
+                                <li><strong>RFQ:</strong> Request for Quotation</li>
+                                <li><strong>RFI:</strong> Request for Information</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="module-actions">
+                    <button class="btn btn-secondary" onclick="markComplete('procurement')">
+                        <i class="fas fa-check"></i> Mark as Complete
+                    </button>
+                    <a href="quiz.html?domain=procurement" class="btn btn-primary">
+                        <i class="fas fa-question-circle"></i> Take Quiz
+                    </a>
+                </div>
+            `,
+            stakeholder: `
+                <div class="domain-header">
+                    <h1><i class="fas fa-user-friends"></i> Stakeholder Management</h1>
+                    <p class="domain-description">Identify and manage stakeholder engagement</p>
+                </div>
+                <div class="module-card">
+                    <div class="module-header" onclick="toggleModule(this)">
+                        <h2>1. Power/Interest Grid</h2>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="module-content">
+                        <div class="key-points">
+                            <h3>Stakeholder Classification:</h3>
+                            <ul>
+                                <li><strong>High Power, High Interest:</strong> Manage Closely</li>
+                                <li><strong>High Power, Low Interest:</strong> Keep Satisfied</li>
+                                <li><strong>Low Power, High Interest:</strong> Keep Informed</li>
+                                <li><strong>Low Power, Low Interest:</strong> Monitor</li>
+                            </ul>
+                            <h3>Engagement Levels:</h3>
+                            <ul>
+                                <li>Unaware → Resistant → Neutral → Supportive → Leading</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="module-actions">
+                    <button class="btn btn-secondary" onclick="markComplete('stakeholder')">
+                        <i class="fas fa-check"></i> Mark as Complete
+                    </button>
+                    <a href="quiz.html?domain=stakeholder" class="btn btn-primary">
+                        <i class="fas fa-question-circle"></i> Take Quiz
+                    </a>
+                </div>
+            `
+        };
+
+        // Load domain content
+        function loadDomain(domain) {
+            const content = document.getElementById('learningContent');
+            content.innerHTML = domainContent[domain] || '<p>Content not found</p>';
+        }
+
+        // Toggle module
+        function toggleModule(element) {
+            const moduleCard = element.closest('.module-card');
+            const content = moduleCard.querySelector('.module-content');
+            const icon = element.querySelector('i');
+            
+            element.classList.toggle('active');
+            content.classList.toggle('active');
+            
+            if (element.classList.contains('active')) {
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // Mark complete
+        function markComplete(domain) {
+            if (window.CAPMApp && window.CAPMApp.progressTracker) {
+                window.CAPMApp.progressTracker.completeModule(domain);
+            }
+            alert('Module completed! +50 XP earned');
+        }
+
+        // Setup navigation
+        document.addEventListener('DOMContentLoaded', () => {
+            const domainLinks = document.querySelectorAll('.domain-link');
+            
+            domainLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    
+                    domainLinks.forEach(l => l.classList.remove('active'));
+                    link.classList.add('active');
+                    
+                    const domain = link.dataset.domain;
+                    loadDomain(domain);
+                });
+            });
+            
+            // Load initial domain
+            loadDomain('integration');
+        });
+    </script>
+</body>
+</html>
