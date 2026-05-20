@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - CAPM Exam Prep</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>CAPM Mastery</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="dashboard.html" class="active">Dashboard</a>
+                <a href="learning.html">Learn</a>
+                <a href="quiz.html">Quiz</a>
+                <a href="flashcards.html">Flashcards</a>
+                <a href="mock-exam.html">Mock Exam</a>
+            </div>
+            <div class="nav-actions">
+                <button class="search-btn" id="searchBtn">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="user-profile">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Search Modal -->
+    <div class="search-modal" id="searchModal">
+        <div class="search-modal-content">
+            <input type="text" id="searchInput" placeholder="Search topics, questions, or concepts...">
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>Navigation</h3>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#overview" class="active">
+                    <i class="fas fa-home"></i>
+                    <span>Overview</span>
+                </a>
+                <a href="learning.html">
+                    <i class="fas fa-book"></i>
+                    <span>Learning Modules</span>
+                </a>
+                <a href="quiz.html">
+                    <i class="fas fa-question-circle"></i>
+                    <span>Practice Quiz</span>
+                </a>
+                <a href="flashcards.html">
+                    <i class="fas fa-layer-group"></i>
+                    <span>Flashcards</span>
+                </a>
+                <a href="mock-exam.html">
+                    <i class="fas fa-clipboard-check"></i>
+                    <span>Mock Exam</span>
+                </a>
+                <a href="#study-plan">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Study Planner</span>
+                </a>
+            </nav>
+            <div class="sidebar-domains">
+                <h4>Knowledge Areas</h4>
+                <a href="learning.html#integration">Integration</a>
+                <a href="learning.html#scope">Scope</a>
+                <a href="learning.html#schedule">Schedule</a>
+                <a href="learning.html#cost">Cost</a>
+                <a href="learning.html#quality">Quality</a>
+                <a href="learning.html#resource">Resource</a>
+                <a href="learning.html#communication">Communication</a>
+                <a href="learning.html#risk">Risk</a>
+                <a href="learning.html#procurement">Procurement</a>
+                <a href="learning.html#stakeholder">Stakeholder</a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Welcome Section -->
+            <section class="welcome-section">
+                <div class="welcome-content">
+                    <h1>Welcome Back, <span id="userName">Student</span>!</h1>
+                    <p>Continue your CAPM journey. You're making great progress!</p>
+                </div>
+                <div class="level-badge">
+                    <div class="badge-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="badge-info">
+                        <span class="level-name" id="userLevel">Beginner</span>
+                        <span class="level-points"><span id="userPoints">0</span> XP</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Stats Cards -->
+            <section class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon blue">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="completedModules">0</h3>
+                        <p>Modules Completed</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon green">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="quizzesTaken">0</h3>
+                        <p>Quizzes Taken</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon orange">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="avgScore">0%</h3>
+                        <p>Average Score</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon purple">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="badgesEarned">0</h3>
+                        <p>Badges Earned</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Exam Readiness -->
+            <section class="exam-readiness">
+                <h2>Exam Readiness Score</h2>
+                <div class="readiness-content">
+                    <div class="readiness-gauge">
+                        <canvas id="readinessChart"></canvas>
+                        <div class="gauge-center">
+                            <span class="gauge-score" id="readinessScore">0%</span>
+                            <span class="gauge-label">Ready</span>
+                        </div>
+                    </div>
+                    <div class="readiness-info">
+                        <h3>Your Progress</h3>
+                        <p id="readinessMessage">Keep learning to improve your exam readiness!</p>
+                        <div class="readiness-recommendations">
+                            <h4>Recommendations:</h4>
+                            <ul id="recommendationsList">
+                                <li>Complete Integration Management module</li>
+                                <li>Take practice quizzes to identify weak areas</li>
+                                <li>Review key formulas and ITTOs</li>
+                            </ul>
+                        </div>
+                        <a href="learning.html" class="btn btn-primary">Continue Learning</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Domain Progress -->
+            <section class="domain-progress-section">
+                <h2>Knowledge Area Progress</h2>
+                <div class="domain-progress-grid">
+                    <div class="domain-progress-item">
+                        <div class="domain-header">
+                            <span class="domain-name">Integration Management</span>
+                            <span class="domain-percentage">0%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%" data-domain="integration"></div>
+                        </div>
+                    </div>
+                    <div class="domain-progress-item">
+                        <div class="domain-header">
+                            <span class="domain-name">Scope Management</span>
+                            <span class="domain-percentage">0%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%" data-domain="scope"></div>
+                        </div>
+                    </div>
+                    <div class="domain-progress-item">
+                        <div class="domain-header">
+                            <span class="domain-name">Schedule Management</span>
+                            <span class="domain-percentage">0%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%" data-domain="schedule"></div>
+                        </div>
+                    </div>
+                    <div class="domain-progress-item">
+                        <div class="domain-header">
+                            <span class="domain-name">Cost Management</span>
+                            <span class="domain-percentage">0%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%" data-domain="cost"></div>
+                        </div>
+                    </div>
+                    <div class="domain-progress-item">
+                        <div class="domain-header">
+                            <span class="domain-name">Quality Management</span>
+                            <span class="domain-percentage">0%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%" data-domain="quality"></div>
+                        </div>
+                    </div>
+                    <div class="domain-progress-item">
+                        <div class="domain-header">
+                            <span class="domain-name">Resource Management</span>
+                            <span class="domain-percentage">0%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%" data-domain="resource"></div>
+                        </div>
+                    </div>
+                    <div class="domain-progress-item">
+                        <div class="domain-header">
+                            <span class="domain-name">Communication Management</span>
+                            <span class="domain-percentage">0%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%" data-domain="communication"></div>
+                        </div>
+                    </div>
+                    <div class="domain-progress-item">
+                        <div class="domain-header">
+                            <span class="domain-name">Risk Management</span>
+                            <span class="domain-percentage">0%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%" data-domain="risk"></div>
+                        </div>
+                    </div>
+                    <div class="domain-progress-item">
+                        <div class="domain-header">
+                            <span class="domain-name">Procurement Management</span>
+                            <span class="domain-percentage">0%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%" data-domain="procurement"></div>
+                        </div>
+                    </div>
+                    <div class="domain-progress-item">
+                        <div class="domain-header">
+                            <span class="domain-name">Stakeholder Management</span>
+                            <span class="domain-percentage">0%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%" data-domain="stakeholder"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Performance Chart -->
+            <section class="performance-section">
+                <h2>Quiz Performance Trends</h2>
+                <div class="chart-container">
+                    <canvas id="performanceChart"></canvas>
+                </div>
+            </section>
+
+            <!-- Study Plan -->
+            <section class="study-plan-section" id="study-plan">
+                <h2>Your Study Plan</h2>
+                <div class="plan-selector">
+                    <button class="plan-btn active" data-plan="7">7-Day Sprint</button>
+                    <button class="plan-btn" data-plan="14">14-Day Sprint</button>
+                </div>
+                <div class="study-plan-content" id="studyPlanContent">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Achievements -->
+            <section class="achievements-section">
+                <h2>Your Achievements</h2>
+                <div class="badges-grid" id="badgesGrid">
+                    <div class="badge-item locked">
+                        <i class="fas fa-star"></i>
+                        <span>First Steps</span>
+                        <small>Complete first module</small>
+                    </div>
+                    <div class="badge-item locked">
+                        <i class="fas fa-fire"></i>
+                        <span>On Fire</span>
+                        <small>7-day streak</small>
+                    </div>
+                    <div class="badge-item locked">
+                        <i class="fas fa-brain"></i>
+                        <span>Quiz Master</span>
+                        <small>Score 90%+ on 5 quizzes</small>
+                    </div>
+                    <div class="badge-item locked">
+                        <i class="fas fa-trophy"></i>
+                        <span>Domain Expert</span>
+                        <small>Complete all modules in one domain</small>
+                    </div>
+                    <div class="badge-item locked">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Exam Ready</span>
+                        <small>Achieve 85%+ readiness</small>
+                    </div>
+                    <div class="badge-item locked">
+                        <i class="fas fa-crown"></i>
+                        <span>CAPM Champion</span>
+                        <small>Complete all domains</small>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

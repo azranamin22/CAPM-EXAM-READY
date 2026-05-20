@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Modules - CAPM Exam Prep</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>CAPM Mastery</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="learning.html" class="active">Learn</a>
+                <a href="quiz.html">Quiz</a>
+                <a href="flashcards.html">Flashcards</a>
+                <a href="mock-exam.html">Mock Exam</a>
+            </div>
+            <div class="nav-actions">
+                <button class="search-btn" id="searchBtn">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="user-profile">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="learning-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>Knowledge Areas</h3>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#integration" class="domain-link active" data-domain="integration">
+                    <i class="fas fa-project-diagram"></i>
+                    <span>Integration Management</span>
+                </a>
+                <a href="#scope" class="domain-link" data-domain="scope">
+                    <i class="fas fa-bullseye"></i>
+                    <span>Scope Management</span>
+                </a>
+                <a href="#schedule" class="domain-link" data-domain="schedule">
+                    <i class="fas fa-clock"></i>
+                    <span>Schedule Management</span>
+                </a>
+                <a href="#cost" class="domain-link" data-domain="cost">
+                    <i class="fas fa-dollar-sign"></i>
+                    <span>Cost Management</span>
+                </a>
+                <a href="#quality" class="domain-link" data-domain="quality">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Quality Management</span>
+                </a>
+                <a href="#resource" class="domain-link" data-domain="resource">
+                    <i class="fas fa-users"></i>
+                    <span>Resource Management</span>
+                </a>
+                <a href="#communication" class="domain-link" data-domain="communication">
+                    <i class="fas fa-comments"></i>
+                    <span>Communication Management</span>
+                </a>
+                <a href="#risk" class="domain-link" data-domain="risk">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <span>Risk Management</span>
+                </a>
+                <a href="#procurement" class="domain-link" data-domain="procurement">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Procurement Management</span>
+                </a>
+                <a href="#stakeholder" class="domain-link" data-domain="stakeholder">
+                    <i class="fas fa-handshake"></i>
+                    <span>Stakeholder Management</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="learning-main">
+            <!-- Integration Management -->
+            <section class="domain-section" id="integration">
+                <div class="domain-header">
+                    <h1><i class="fas fa-project-diagram"></i> Integration Management</h1>
+                    <p class="domain-description">Coordinate all project elements to ensure they work together effectively</p>
+                </div>
+
+                <div class="module-card">
+                    <div class="module-header" onclick="toggleModule(this)">
+                        <h2>1. Overview & Key Concepts</h2>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="module-content">
+                        <p><strong>What is Project Integration Management?</strong></p>
+                        <p>Integration Management involves coordinating all aspects of the project to ensure they work together harmoniously. It's about making trade-offs and managing interdependencies across all knowledge areas.</p>
+                        
+                        <div class="key-points">
+                            <h3>Key Concepts:</h3>
+                            <ul>
+                                <li><strong>Project Charter:</strong> Formal authorization document that establishes the project</li>
+                                <li><strong>Project Management Plan:</strong> Comprehensive document defining how the project will be executed, monitored, and controlled</li>
+                                <li><strong>Change Control:</strong> Process for managing changes to project scope, schedule, and costs</li>
+                                <li><strong>Lessons Learned:</strong> Knowledge gained during the project that can improve future performance</li>
+                            </ul>
+                        </div>
+
+                        <div class="real-world-example">
+                            <h3><i class="fas fa-lightbulb"></i> Real-World Example:</h3>
+                            <p>Imagine building a house. Integration Management is like being the general contractor who coordinates the electrician, plumber, carpenter, and painter to ensure they work in the right sequence and don't interfere with each other's work.</p>
+                        </div>
+
+                        <div class="exam-tips">
+                            <h3><i class="fas fa-exclamation-circle"></i> Common Exam Traps:</h3>
+                            <ul>
+                                <li>Don't confuse the Project Charter with the Project Management Plan</li>
+                                <li>Remember: The sponsor approves the charter, not the project manager</li>
+                                <li>Change requests must go through formal change control process</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="module-card">
+                    <div class="module-header" onclick="toggleModule(this)">
+                        <h2>2. Key Processes</h2>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="module-content">
+                        <div class="process-table">
+                            <h3>Integration Management Processes:</h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Process</th>
+                                        <th>Process Group</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Develop Project Charter</td>
+                                        <td>Initiating</td>
+                                        <td>Formally authorize the project</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Develop Project Management Plan</td>
+                                        <td>Planning</td>
+                                        <td>Define how project will be executed and controlled</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Direct and Manage Project Work</td>
+                                        <td>Executing</td>
+                                        <td>Lead and perform project activities</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Manage Project Knowledge</td>
+                                        <td>Executing</td>
+                                        <td>Use and create knowledge to achieve objectives</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Monitor and Control Project Work</td>
+                                        <td>Monitoring & Controlling</td>
+                                        <td>Track, review, and report project progress</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Perform Integrated Change Control</td>
+                                        <td>Monitoring & Controlling</td>
+                                        <td>Review and approve/reject change requests</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Close Project or Phase</td>
+                                        <td>Closing</td>
+                                        <td>Finalize all activities and formally close</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="module-card">
+                    <div class="module-header" onclick="toggleModule(this)">
+                        <h2>3. ITTOs (Inputs, Tools & Techniques, Outputs)</h2>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="module-content">
+                        <div class="itto-section">
+                            <h3>Develop Project Charter</h3>
+                            <div class="itto-grid">
+                                <div class="itto-column">
+                                    <h4>Inputs</h4>
+                                    <ul>
+                                        <li>Business case</li>
+                                        <li>Benefits management plan</li>
+                                        <li>Agreements</li>
+                                        <li>Enterprise environmental factors</li>
+                                        <li>Organizational process assets</li>
+                                    </ul>
+                                </div>
+                                <div class="itto-column">
+                                    <h4>Tools & Techniques</h4>
+                                    <ul>
+                                        <li>Expert judgment</li>
+                                        <li>Data gathering</li>
+                                        <li>Interpersonal and team skills</li>
+                                        <li>Meetings</li>
+                                    </ul>
+                                </div>
+                                <div class="itto-column">
+                                    <h4>Outputs</h4>
+                                    <ul>
+                                        <li>Project charter</li>
+                                        <li>Assumption log</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="itto-section">
+                            <h3>Perform Integrated Change Control</h3>
+                            <div class="itto-grid">
+                                <div class="itto-column">
+                                    <h4>Inputs</h4>
+                                    <ul>
+                                        <li>Project management plan</li>
+                                        <li>Work performance reports</li>
+                                        <li>Change requests</li>
+                                        <li>Enterprise environmental factors</li>
+                                        <li>Organizational process assets</li>
+                                    </ul>
+                                </div>
+                                <div class="itto-column">
+                                    <h4>Tools & Techniques</h4>
+                                    <ul>
+                                        <li>Expert judgment</li>
+                                        <li>Change control tools</li>
+                                        <li>Data analysis</li>
+                                        <li>Decision making</li>
+                                        <li>Meetings</li>
+                                    </ul>
+                                </div>
+                                <div class="itto-column">
+                                    <h4>Outputs</h4>
+                                    <ul>
+                                        <li>Approved change requests</li>
+                                        <li>Project management plan updates</li>
+                                        <li>Project documents updates</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="module-card">
+                    <div class="module-header" onclick="toggleModule(this)">
+                        <h2>4. Quick Revision Cheat Sheet</h2>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="module-content">
+                        <div class="cheat-sheet">
+                            <div class="cheat-item">
+                                <h4>Remember:</h4>
+                                <ul>
+                                    <li>7 processes in Integration Management</li>
+                                    <li>Only knowledge area that touches all 5 process groups</li>
+                                    <li>Project Charter = Authorization (Sponsor signs)</li>
+                                    <li>PM Plan = How to execute (PM creates)</li>
+                                    <li>Change Control Board (CCB) approves changes</li>
+                                </ul>
+                            </div>
+                            <div class="cheat-item">
+                                <h4>Key Documents:</h4>
+                                <ul>
+                                    <li><strong>Project Charter:</strong> High-level, authorizes project</li>
+                                    <li><strong>PM Plan:</strong> Detailed, guides execution</li>
+                                    <li><strong>Change Log:</strong> Tracks all change requests</li>
+                                    <li><strong>Lessons Learned Register:</strong> Captures knowledge</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="module-actions">
+                    <button class="btn btn-secondary" onclick="markComplete('integration')">
+                        <i class="fas fa-check"></i> Mark as Complete
+                    </button>
+                    <a href="quiz.html?domain=integration" class="btn btn-primary">
+                        <i class="fas fa-question-circle"></i> Take Quiz
+                    </a>
+                </div>
+            </section>
+
+            <!-- Risk Management -->
+            <section class="domain-section" id="risk" style="display: none;">
+                <div class="domain-header">
+                    <h1><i class="fas fa-exclamation-triangle"></i> Risk Management</h1>
+                    <p class="domain-description">Identify, analyze, and respond to project risks to maximize opportunities and minimize threats</p>
+                </div>
+
+                <div class="module-card">
+                    <div class="module-header" onclick="toggleModule(this)">
+                        <h2>1. Overview & Key Concepts</h2>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="module-content">
+                        <p><strong>What is Project Risk Management?</strong></p>
+                        <p>Risk Management involves identifying, analyzing, and responding to project risks. A risk is an uncertain event that, if it occurs, can have a positive (opportunity) or negative (threat) effect on project objectives.</p>
+                        
+                        <div class="key-points">
+                            <h3>Key Concepts:</h3>
+                            <ul>
+                                <li><strong>Risk:</strong> An uncertain event or condition that can affect project objectives</li>
+                                <li><strong>Threat:</strong> Negative risk that could harm the project</li>
+                                <li><strong>Opportunity:</strong> Positive risk that could benefit the project</li>
+                                <li><strong>Risk Appetite:</strong> Degree of uncertainty an organization is willing to accept</li>
+                                <li><strong>Risk Tolerance:</strong> Specific level of risk that is acceptable</li>
+                                <li><strong>Risk Threshold:</strong> Measure of acceptable variation around an objective</li>
+                            </ul>
+                        </div>
+
+                        <div class="real-world-example">
+                            <h3><i class="fas fa-lightbulb"></i> Real-World Example:</h3>
+                            <p>Planning a wedding outdoors in summer. <strong>Threat:</strong> Rain could ruin the ceremony (negative risk). <strong>Opportunity:</strong> Vendor might offer discount for booking early (positive risk). You'd plan for both - rent a tent (mitigate threat) and book early (exploit opportunity).</p>
+                        </div>
+
+                        <div class="exam-tips">
+                            <h3><i class="fas fa-exclamation-circle"></i> Common Exam Traps:</h3>
+                            <ul>
+                                <li>Not all risks are negative - remember opportunities!</li>
+                                <li>Risk register is created in "Identify Risks," not "Plan Risk Management"</li>
+                                <li>Qualitative analysis comes before quantitative analysis</li>
+                                <li>Residual risks remain after response planning</li>
+                                <li>Secondary risks are NEW risks created by risk responses</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="module-card">
+                    <div class="module-header" onclick="toggleModule(this)">
+                        <h2>2. Key Processes</h2>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="module-content">
+                        <div class="process-table">
+                            <h3>Risk Management Processes:</h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Process</th>
+                                        <th>Process Group</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Plan Risk Management</td>
+                                        <td>Planning</td>
+                                        <td>Define how to conduct risk management activities</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Identify Risks</td>
+                                        <td>Planning</td>
+                                        <td>Determine which risks may affect the project</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Perform Qualitative Risk Analysis</td>
+                                        <td>Planning</td>
+                                        <td>Prioritize risks by probability and impact</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Perform Quantitative Risk Analysis</td>
+                                        <td>Planning</td>
+                                        <td>Numerically analyze the effect of risks</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Plan Risk Responses</td>
+                                        <td>Planning</td>
+                                        <td>Develop options to enhance opportunities and reduce threats</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Implement Risk Responses</td>
+                                        <td>Executing</td>
+                                        <td>Execute agreed-upon risk response plans</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Monitor Risks</td>
+                                        <td>Monitoring & Controlling</td>
+                                        <td>Track identified risks and identify new risks</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="module-card">
+                    <div class="module-header" onclick="toggleModule(this)">
+                        <h2>3. Risk Response Strategies</h2>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="module-content">
+                        <div class="strategies-grid">
+                            <div class="strategy-card threat">
+                                <h3>Strategies for THREATS (Negative Risks)</h3>
+                                <div class="strategy-item">
+                                    <h4>1. Avoid</h4>
+                                    <p>Eliminate the threat by removing the cause</p>
+                                    <p class="example"><strong>Example:</strong> Cancel outdoor event to avoid weather risk</p>
+                                </div>
+                                <div class="strategy-item">
+                                    <h4>2. Mitigate</h4>
+                                    <p>Reduce probability or impact of the risk</p>
+                                    <p class="example"><strong>Example:</strong> Rent a tent for outdoor event</p>
+                                </div>
+                                <div class="strategy-item">
+                                    <h4>3. Transfer</h4>
+                                    <p>Shift impact to a third party (insurance, outsourcing)</p>
+                                    <p class="example"><strong>Example:</strong> Buy event insurance</p>
+                                </div>
+                                <div class="strategy-item">
+                                    <h4>4. Accept</h4>
+                                    <p>Acknowledge the risk but take no action unless it occurs</p>
+                                    <p class="example"><strong>Example:</strong> Have backup plan ready if needed</p>
+                                </div>
+                                <div class="strategy-item">
+                                    <h4>5. Escalate</h4>
+                                    <p>Risk is outside project scope; escalate to higher authority</p>
+                                    <p class="example"><strong>Example:</strong> Company-wide policy change needed</p>
+                                </div>
+                            </div>
+
+                            <div class="strategy-card opportunity">
+                                <h3>Strategies for OPPORTUNITIES (Positive Risks)</h3>
+                                <div class="strategy-item">
+                                    <h4>1. Exploit</h4>
+                                    <p>Ensure the opportunity definitely happens</p>
+                                    <p class="example"><strong>Example:</strong> Assign best resources to critical task</p>
+                                </div>
+                                <div class="strategy-item">
+                                    <h4>2. Enhance</h4>
+                                    <p>Increase probability or impact of opportunity</p>
+                                    <p class="example"><strong>Example:</strong> Add resources to finish early</p>
+                                </div>
+                                <div class="strategy-item">
+                                    <h4>3. Share</h4>
+                                    <p>Allocate ownership to third party best able to capture it</p>
+                                    <p class="example"><strong>Example:</strong> Partner with expert organization</p>
+                                </div>
+                                <div class="strategy-item">
+                                    <h4>4. Accept</h4>
+                                    <p>Take advantage if it occurs, but don't actively pursue</p>
+                                    <p class="example"><strong>Example:</strong> Be ready to use if vendor offers discount</p>
+                                </div>
+                                <div class="strategy-item">
+                                    <h4>5. Escalate</h4>
+                                    <p>Opportunity is outside project scope; escalate to higher authority</p>
+                                    <p class="example"><strong>Example:</strong> Strategic business opportunity</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="module-card">
+                    <div class="module-header" onclick="toggleModule(this)">
+                        <h2>4. Risk Analysis Tools</h2>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="module-content">
+                        <div class="tools-section">
+                            <h3>Qualitative Analysis Tools:</h3>
+                            <ul>
+                                <li><strong>Probability and Impact Matrix:</strong> Prioritize risks based on likelihood and consequence</li>
+                                <li><strong>Risk Data Quality Assessment:</strong> Evaluate accuracy and reliability of risk data</li>
+                                <li><strong>Risk Categorization:</strong> Group risks by source (technical, external, organizational)</li>
+                                <li><strong>Risk Urgency Assessment:</strong> Determine which risks need immediate attention</li>
+                            </ul>
+
+                            <h3>Quantitative Analysis Tools:</h3>
+                            <ul>
+                                <li><strong>Expected Monetary Value (EMV):</strong> Probability × Impact in dollars</li>
+                                <li><strong>Decision Tree Analysis:</strong> Visual representation of decisions and their outcomes</li>
+                                <li><strong>Sensitivity Analysis:</strong> Determine which risks have most impact on project</li>
+                                <li><strong>Monte Carlo Simulation:</strong> Computer model that simulates project outcomes</li>
+                            </ul>
+                        </div>
+
+                        <div class="formula-box">
+                            <h3>Key Formula:</h3>
+                            <div class="formula">
+                                <strong>Expected Monetary Value (EMV) =</strong> Probability × Impact
+                            </div>
+                            <p class="formula-example">
+                                <strong>Example:</strong> 30% chance of $10,000 cost overrun<br>
+                                EMV = 0.30 × $10,000 = $3,000
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="module-card">
+                    <div class="module-header" onclick="toggleModule(this)">
+                        <h2>5. Quick Revision Cheat Sheet</h2>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="module-content">
+                        <div class="cheat-sheet">
+                            <div class="cheat-item">
+                                <h4>Remember:</h4>
+                                <ul>
+                                    <li>7 processes in Risk Management (all in Planning except Implement and Monitor)</li>
+                                    <li>Qualitative BEFORE Quantitative</li>
+                                    <li>Risk Register created in "Identify Risks"</li>
+                                    <li>Contingency Reserve = Known unknowns (identified risks)</li>
+                                    <li>Management Reserve = Unknown unknowns (unidentified risks)</li>
+                                </ul>
+                            </div>
+                            <div class="cheat-item">
+                                <h4>Threat vs Opportunity Strategies:</h4>
+                                <table class="comparison-table">
+                                    <tr>
+                                        <th>Threats</th>
+                                        <th>Opportunities</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Avoid</td>
+                                        <td>Exploit</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mitigate</td>
+                                        <td>Enhance</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Transfer</td>
+                                        <td>Share</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" style="text-align: center;">Accept / Escalate (both)</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="cheat-item">
+                                <h4>Key Terms:</h4>
+                                <ul>
+                                    <li><strong>Residual Risk:</strong> Risk remaining after response</li>
+                                    <li><strong>Secondary Risk:</strong> NEW risk caused by response</li>
+                                    <li><strong>Fallback Plan:</strong> Backup if primary response fails</li>
+                                    <li><strong>Workaround:</strong> Unplanned response to emerging risk</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="module-actions">
+                    <button class="btn btn-secondary" onclick="markComplete('risk')">
+                        <i class="fas fa-check"></i> Mark as Complete
+                    </button>
+                    <a href="quiz.html?domain=risk" class="btn btn-primary">
+                        <i class="fas fa-question-circle"></i> Take Quiz
+                    </a>
+                </div>
+            </section>
+
+            <!-- Placeholder sections for other domains -->
+            <section class="domain-section" id="scope" style="display: none;">
+                <div class="domain-header">
+                    <h1><i class="fas fa-bullseye"></i> Scope Management</h1>
+                    <p class="domain-description">Content coming soon...</p>
+                </div>
+            </section>
+
+            <section class="domain-section" id="schedule" style="display: none;">
+                <div class="domain-header">
+                    <h1><i class="fas fa-clock"></i> Schedule Management</h1>
+                    <p class="domain-description">Content coming soon...</p>
+                </div>
+            </section>
+
+            <section class="domain-section" id="cost" style="display: none;">
+                <div class="domain-header">
+                    <h1><i class="fas fa-dollar-sign"></i> Cost Management</h1>
+                    <p class="domain-description">Content coming soon...</p>
+                </div>
+            </section>
+
+            <section class="domain-section" id="quality" style="display: none;">
+                <div class="domain-header">
+                    <h1><i class="fas fa-check-circle"></i> Quality Management</h1>
+                    <p class="domain-description">Content coming soon...</p>
+                </div>
+            </section>
+
+            <section class="domain-section" id="resource" style="display: none;">
+                <div class="domain-header">
+                    <h1><i class="fas fa-users"></i> Resource Management</h1>
+                    <p class="domain-description">Content coming soon...</p>
+                </div>
+            </section>
+
+            <section class="domain-section" id="communication" style="display: none;">
+                <div class="domain-header">
+                    <h1><i class="fas fa-comments"></i> Communication Management</h1>
+                    <p class="domain-description">Content coming soon...</p>
+                </div>
+            </section>
+
+            <section class="domain-section" id="procurement" style="display: none;">
+                <div class="domain-header">
+                    <h1><i class="fas fa-shopping-cart"></i> Procurement Management</h1>
+                    <p class="domain-description">Content coming soon...</p>
+                </div>
+            </section>
+
+            <section class="domain-section" id="stakeholder" style="display: none;">
+                <div class="domain-header">
+                    <h1><i class="fas fa-handshake"></i> Stakeholder Management</h1>
+                    <p class="domain-description">Content coming soon...</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/learning.js"></script>
+</body>
+</html>

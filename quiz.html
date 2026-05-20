@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Quiz - CAPM Exam Prep</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/additional-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>CAPM Mastery</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="learning.html">Learn</a>
+                <a href="quiz.html" class="active">Quiz</a>
+                <a href="flashcards.html">Flashcards</a>
+                <a href="mock-exam.html">Mock Exam</a>
+            </div>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="user-profile">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="quiz-container">
+        <!-- Quiz Setup -->
+        <div class="quiz-setup" id="quizSetup">
+            <h1>Practice Quiz</h1>
+            <p>Test your knowledge and track your progress</p>
+
+            <div class="setup-options">
+                <div class="option-group">
+                    <label>Select Knowledge Area:</label>
+                    <select id="domainSelect" class="form-select">
+                        <option value="all">All Domains (Mixed)</option>
+                        <option value="integration">Integration Management</option>
+                        <option value="scope">Scope Management</option>
+                        <option value="schedule">Schedule Management</option>
+                        <option value="cost">Cost Management</option>
+                        <option value="quality">Quality Management</option>
+                        <option value="resource">Resource Management</option>
+                        <option value="communication">Communication Management</option>
+                        <option value="risk">Risk Management</option>
+                        <option value="procurement">Procurement Management</option>
+                        <option value="stakeholder">Stakeholder Management</option>
+                    </select>
+                </div>
+
+                <div class="option-group">
+                    <label>Difficulty Level:</label>
+                    <div class="difficulty-buttons">
+                        <button class="difficulty-btn active" data-difficulty="easy">
+                            <i class="fas fa-smile"></i>
+                            Easy
+                        </button>
+                        <button class="difficulty-btn" data-difficulty="medium">
+                            <i class="fas fa-meh"></i>
+                            Medium
+                        </button>
+                        <button class="difficulty-btn" data-difficulty="hard">
+                            <i class="fas fa-fire"></i>
+                            Hard
+                        </button>
+                    </div>
+                </div>
+
+                <div class="option-group">
+                    <label>Number of Questions:</label>
+                    <div class="question-count">
+                        <button class="count-btn" data-count="5">5</button>
+                        <button class="count-btn active" data-count="10">10</button>
+                        <button class="count-btn" data-count="15">15</button>
+                        <button class="count-btn" data-count="20">20</button>
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn btn-primary btn-large" id="startQuizBtn">
+                <i class="fas fa-play"></i> Start Quiz
+            </button>
+        </div>
+
+        <!-- Quiz Active -->
+        <div class="quiz-active" id="quizActive" style="display: none;">
+            <div class="quiz-header">
+                <div class="quiz-progress">
+                    <span class="question-counter">Question <span id="currentQuestion">1</span> of <span id="totalQuestions">10</span></span>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="quizProgress"></div>
+                    </div>
+                </div>
+                <div class="quiz-stats">
+                    <div class="stat">
+                        <i class="fas fa-check-circle"></i>
+                        <span id="correctCount">0</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-times-circle"></i>
+                        <span id="incorrectCount">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-card" id="questionCard">
+                <div class="question-domain" id="questionDomain"></div>
+                <div class="question-difficulty" id="questionDifficulty"></div>
+                <h2 class="question-text" id="questionText"></h2>
+                <div class="answer-options" id="answerOptions"></div>
+                <button class="btn btn-primary" id="submitAnswerBtn" disabled>
+                    Submit Answer
+                </button>
+            </div>
+
+            <div class="answer-feedback" id="answerFeedback" style="display: none;">
+                <div class="feedback-content">
+                    <div class="feedback-icon" id="feedbackIcon"></div>
+                    <h3 id="feedbackTitle"></h3>
+                    <p id="feedbackText"></p>
+                    <div class="explanation" id="explanation"></div>
+                </div>
+                <button class="btn btn-primary" id="nextQuestionBtn">
+                    Next Question <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Quiz Results -->
+        <div class="quiz-results" id="quizResults" style="display: none;">
+            <div class="results-header">
+                <div class="results-icon" id="resultsIcon">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <h1>Quiz Complete!</h1>
+                <p class="results-message" id="resultsMessage"></p>
+            </div>
+
+            <div class="results-stats">
+                <div class="result-stat">
+                    <div class="stat-value" id="finalScore">0%</div>
+                    <div class="stat-label">Final Score</div>
+                </div>
+                <div class="result-stat">
+                    <div class="stat-value" id="correctAnswers">0/10</div>
+                    <div class="stat-label">Correct Answers</div>
+                </div>
+                <div class="result-stat">
+                    <div class="stat-value" id="timeSpent">0:00</div>
+                    <div class="stat-label">Time Spent</div>
+                </div>
+                <div class="result-stat">
+                    <div class="stat-value" id="pointsEarned">+0 XP</div>
+                    <div class="stat-label">Points Earned</div>
+                </div>
+            </div>
+
+            <div class="results-breakdown">
+                <h2>Performance by Domain</h2>
+                <div class="domain-breakdown" id="domainBreakdown"></div>
+            </div>
+
+            <div class="results-recommendations">
+                <h2>Recommendations</h2>
+                <div class="recommendations-list" id="recommendationsList"></div>
+            </div>
+
+            <div class="results-actions">
+                <button class="btn btn-secondary" id="reviewAnswersBtn">
+                    <i class="fas fa-eye"></i> Review Answers
+                </button>
+                <button class="btn btn-primary" id="retakeQuizBtn">
+                    <i class="fas fa-redo"></i> Take Another Quiz
+                </button>
+                <a href="dashboard.html" class="btn btn-outline">
+                    <i class="fas fa-home"></i> Back to Dashboard
+                </a>
+            </div>
+        </div>
+
+        <!-- Answer Review -->
+        <div class="answer-review" id="answerReview" style="display: none;">
+            <div class="review-header">
+                <h1>Answer Review</h1>
+                <button class="btn btn-secondary" id="backToResultsBtn">
+                    <i class="fas fa-arrow-left"></i> Back to Results
+                </button>
+            </div>
+            <div class="review-content" id="reviewContent"></div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/quiz.js"></script>
+</body>
+</html>
