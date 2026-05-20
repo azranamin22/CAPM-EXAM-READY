@@ -576,66 +576,1927 @@
                 </div>
             </section>
 
-            <!-- Placeholder sections for other domains -->
+            <!-- SCOPE MANAGEMENT -->
             <section class="domain-section" id="scope" style="display: none;">
                 <div class="domain-header">
                     <h1><i class="fas fa-bullseye"></i> Scope Management</h1>
-                    <p class="domain-description">Content coming soon...</p>
+                    <p class="domain-description">Define and control what is and is not included in the project</p>
+                </div>
+
+                <div class="module-card">
+                    <div class="module-header" onclick="toggleModule(this)">
+                        <h2>1. Overview & Key Concepts</h2>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="module-content">
+                        <p><strong>What is Project Scope Management?</strong></p>
+                        <p>Scope Management includes the processes required to ensure the project includes all the work required, and only the work required, to complete the project successfully.</p>
+                        
+                        <div class="key-points">
+                            <h3>Key Concepts:</h3>
+                            <ul>
+                                <li><strong>Project Scope:</strong> The work performed to deliver a product, service, or result</li>
+                                <li><strong>Product Scope:</strong> The features and functions of the product/service</li>
+                                <li><strong>Scope Statement:</strong> Detailed description of project deliverables</li>
+                                <li><strong>WBS (Work Breakdown Structure):</strong> Hierarchical decomposition of work</li>
+                                <li><strong>Work Package:</strong> Lowest level of WBS</li>
+                                <li><strong>Scope Baseline:</strong> Approved scope statement + WBS + WBS dictionary</li>
+                                <li><strong>Scope Creep:</strong> Uncontrolled expansion of scope</li>
+                            </ul>
+                        </div>
+
+                        <div class="real-world-example">
+                            <h3><i class="fas fa-lightbulb"></i> Real-World Example:</h3>
+                            <p>Building a mobile app: <strong>Product Scope</strong> = Features like login, profile, messaging. <strong>Project Scope</strong> = All work to create those features (design, coding, testing, deployment). If client suddenly wants video calling (not in original scope), that's <strong>scope creep</strong> unless properly managed through change control.</p>
+                        </div>
+
+                        <div class="exam-tips">
+                            <h3><i class="fas fa-exclamation-circle"></i> Common Exam Traps:</h3>
+                            <ul>
+                                <li>Project Scope ≠ Product Scope (work vs features)</li>
+                                <li>Validate Scope = Customer acceptance (not quality check)</li>
+                                <li>Control Quality checks correctness; Validate Scope checks acceptance</li>
+                                <li>Scope baseline = 3 components (statement + WBS + dictionary)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="module-card">
+                    <div class="module-header" onclick="toggleModule(this)">
+                        <h2>2. Key Processes (6 Total)</h2>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="module-content">
+                        <div class="process-table">
+                            <h3>Scope Management Processes:</h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Process</th>
+                                        <th>Process Group</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Plan Scope Management</td>
+                                        <td>Planning</td>
+                                        <td>Define how scope will be defined, validated, and controlled</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Collect Requirements</td>
+                                        <td>Planning</td>
+                                        <td>Determine and document stakeholder needs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Define Scope</td>
+                                        <td>Planning</td>
+                                        <td>Develop detailed description of project and product</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Create WBS</td>
+                                        <td>Planning</td>
+                                        <td>Subdivide deliverables into smaller components</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Validate Scope</td>
+                                        <td>Monitoring & Controlling</td>
+                                        <td>Formalize acceptance of completed deliverables</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Control Scope</td>
+                                        <td>Monitoring & Controlling</td>
+                                        <td>Monitor status and manage changes to scope baseline</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="module-card">
+                    <div class="module-header" onclick="toggleModule(this)">
+                        <h2>3. Work Breakdown Structure (WBS)</h2>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="module-content">
+                        <p><strong>WBS Definition:</strong> A hierarchical decomposition of the total scope of work to be carried out by the project team.</p>
+                        
+                        <div class="key-points">
+                            <h3>WBS Key Points:</h3>
+                            <ul>
+                                <li><strong>Purpose:</strong> Break down work into manageable pieces</li>
+                                <li><strong>Structure:</strong> Hierarchical (tree structure)</li>
+                                <li><strong>Lowest Level:</strong> Work Package (where cost/duration estimated)</li>
+                                <li><strong>100% Rule:</strong> WBS includes 100% of work (no more, no less)</li>
+                                <li><strong>Deliverable-Oriented:</strong> Focuses on deliverables, not activities</li>
+                            </ul>
+                        </div>
+
+                        <div class="real-world-example">
+                            <h3><i class="fas fa-lightbulb"></i> WBS Example - Website Project:</h3>
+                            <p>
+                                <strong>Level 1:</strong> Website Project<br>
+                                <strong>Level 2:</strong> Design, Development, Testing, Deployment<br>
+                                <strong>Level 3 (under Development):</strong> Frontend, Backend, Database<br>
+                                <strong>Level 4 (Work Packages):</strong> Login Page, User Profile, Shopping Cart
+                            </p>
+                        </div>
+
+                        <div class="exam-tips">
+                            <h3><i class="fas fa-exclamation-circle"></i> WBS Exam Tips:</h3>
+                            <ul>
+                                <li>WBS Dictionary provides detailed descriptions of work packages</li>
+                                <li>Decomposition = Breaking down deliverables</li>
+                                <li>Work Package = Lowest level where cost/time can be estimated</li>
+                                <li>WBS is deliverable-oriented, NOT activity-oriented</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="module-card">
+                    <div class="module-header" onclick="toggleModule(this)">
+                        <h2>4. Quick Revision Cheat Sheet</h2>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="module-content">
+                        <div class="cheat-sheet">
+                            <div class="cheat-item">
+                                <h4>Remember:</h4>
+                                <ul>
+                                    <li>6 processes in Scope Management (4 Planning, 2 M&C)</li>
+                                    <li>Project Scope = WORK to be done</li>
+                                    <li>Product Scope = FEATURES of deliverable</li>
+                                    <li>Scope Baseline = Statement + WBS + WBS Dictionary</li>
+                                    <li>Validate Scope = ACCEPTANCE by customer</li>
+                                    <li>Control Quality = CORRECTNESS of deliverable</li>
+                                </ul>
+                            </div>
+                            <div class="cheat-item">
+                                <h4>Key Tools:</h4>
+                                <ul>
+                                    <li><strong>Requirements Traceability Matrix:</strong> Links requirements to deliverables</li>
+                                    <li><strong>WBS:</strong> Hierarchical decomposition</li>
+                                    <li><strong>Scope Baseline:</strong> Approved version of scope</li>
+                                    <li><strong>Variance Analysis:</strong> Compare actual vs baseline</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="module-actions">
+                    <button class="btn btn-secondary" onclick="markComplete('scope')">
+                        <i class="fas fa-check"></i> Mark as Complete
+                    </button>
+                    <a href="quiz.html?domain=scope" class="btn btn-primary">
+                        <i class="fas fa-question-circle"></i> Take Quiz
+                    </a>
                 </div>
             </section>
 
+            <!-- SCHEDULE MANAGEMENT -->
             <section class="domain-section" id="schedule" style="display: none;">
                 <div class="domain-header">
                     <h1><i class="fas fa-clock"></i> Schedule Management</h1>
-                    <p class="domain-description">Content coming soon...</p>
+                    <p class="domain-description">Plan, develop, manage, and control the project timeline</p>
+                </div>
+
+                <div class="module-card">
+                    <div class="module-header" onclick="toggleModule(this)">
+                        <h2>1. Overview & Key Concepts</h2>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="module-content">
+                        <p><strong>What is Project Schedule Management?</strong></p>
+                        <p>Schedule Management includes the processes required to manage the timely completion of the project.</p>
+                        
+                        <div class="key-points">
+                            <h3>Key Concepts:</h3>
+                            <ul>
+                                <li><strong>Critical Path:</strong> Longest sequence of activities (zero float)</li>
+                                <li><strong>Float/Slack:</strong> Amount of time activity can be delayed</li>
+                                <li><strong>Lead:</strong> Overlap activities (start earlier)</li>
+                                <li><strong>Lag:</strong> Delay between activities (start later)</li>
+                                <li><strong>Fast-Tracking:</strong> Parallel activities (increases risk)</li>
+                                <li><strong>Crashing:</strong> Add resources (increases cost)</li>
+                                <li><strong>Milestone:</strong> Significant point (zero duration)</li>
+                            </ul>
+                        </div>
+
+                        <div class="real-world-example">
+                            <h3><i class="fas fa-lightbulb"></i> Real-World Example:</h3>
+                            <p>Building a house: <strong>Critical Path</strong> = Foundation → Framing → Roofing → Electrical → Plumbing → Finishing (longest path). Painting interior has <strong>float</strong> (can be delayed without affecting completion). <strong>Fast-tracking</strong> = Start electrical while framing (risky). <strong>Crashing</strong> = Hire more workers to finish faster (costly).</p>
+                        </div>
+
+                        <div class="exam-tips">
+                            <h3><i class="fas fa-exclamation-circle"></i> Common Exam Traps:</h3>
+                            <ul>
+                                <li>Critical Path = LONGEST path (not shortest!)</li>
+                                <li>Activities on critical path have ZERO float</li>
+                                <li>Fast-tracking increases RISK (not cost)</li>
+                                <li>Crashing increases COST (not risk)</li>
+                                <li>Lead = negative lag (overlap)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="module-card">
+                    <div class="module-header" onclick="toggleModule(this)">
+                        <h2>2. Key Processes (6 Total)</h2>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="module-content">
+                        <div class="process-table">
+                            <h3>Schedule Management Processes:</h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Process</th>
+                                        <th>Process Group</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Plan Schedule Management</td>
+                                        <td>Planning</td>
+                                        <td>Establish policies and procedures for planning and managing schedule</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Define Activities</td>
+                                        <td>Planning</td>
+                                        <td>Identify specific actions to produce deliverables</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sequence Activities</td>
+                                        <td>Planning</td>
+                                        <td>Identify relationships among activities</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Estimate Activity Durations</td>
+                                        <td>Planning</td>
+                                        <td>Estimate time needed to complete activities</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Develop Schedule</td>
+                                        <td>Planning</td>
+                                        <td>Analyze sequences, durations, and resources to create schedule</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Control Schedule</td>
+                                        <td>Monitoring & Controlling</td>
+                                        <td>Monitor status and manage changes to schedule baseline</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="module-card">
+                    <div class="module-header" onclick="toggleModule(this)">
+                        <h2>3. Critical Formulas</h2>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="module-content">
+                        <div class="formula-box">
+                            <h3>PERT (3-Point Estimate):</h3>
+                            <div class="formula">
+                                <strong>PERT = (Optimistic + 4 × Most Likely + Pessimistic) / 6</strong>
+                            </div>
+                            <p class="formula-example">
+                                <strong>Example:</strong> Optimistic = 3 days, Most Likely = 5 days, Pessimistic = 9 days<br>
+                                PERT = (3 + 4×5 + 9) / 6 = (3 + 20 + 9) / 6 = 32 / 6 = 5.33 days
+                            </p>
+                        </div>
+
+                        <div class="formula-box">
+                            <h3>Float/Slack Calculation:</h3>
+                            <div class="formula">
+                                <strong>Float = Late Start - Early Start</strong><br>
+                                <strong>OR</strong><br>
+                                <strong>Float = Late Finish - Early Finish</strong>
+                            </div>
+                            <p class="formula-example">
+                                <strong>Example:</strong> Early Start = Day 5, Late Start = Day 8<br>
+                                Float = 8 - 5 = 3 days (activity can be delayed 3 days)
+                            </p>
+                        </div>
+
+                        <div class="exam-tips">
+                            <h3><i class="fas fa-exclamation-circle"></i> Formula Tips:</h3>
+                            <ul>
+                                <li>PERT uses weighted average (Most Likely weighted 4x)</li>
+                                <li>Critical Path activities have ZERO float</li>
+                                <li>Positive float = flexibility in schedule</li>
+                                <li>Negative float = schedule is behind</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="module-card">
+                    <div class="module-header" onclick="toggleModule(this)">
+                        <h2>4. Schedule Compression Techniques</h2>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="module-content">
+                        <div class="comparison-table">
+                            <h3>Fast-Tracking vs Crashing:</h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Aspect</th>
+                                        <th>Fast-Tracking</th>
+                                        <th>Crashing</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Method</strong></td>
+                                        <td>Do activities in parallel</td>
+                                        <td>Add more resources</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Impact</strong></td>
+                                        <td>Increases RISK</td>
+                                        <td>Increases COST</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>When to Use</strong></td>
+                                        <td>Activities can overlap</td>
+                                        <td>Have budget for resources</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Example</strong></td>
+                                        <td>Start testing before coding done</td>
+                                        <td>Hire more developers</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="module-card">
+                    <div class="module-header" onclick="toggleModule(this)">
+                        <h2>5. Quick Revision Cheat Sheet</h2>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="module-content">
+                        <div class="cheat-sheet">
+                            <div class="cheat-item">
+                                <h4>Remember:</h4>
+                                <ul>
+                                    <li>6 processes (5 Planning, 1 M&C)</li>
+                                    <li>Critical Path = LONGEST path, ZERO float</li>
+                                    <li>Float = Schedule flexibility</li>
+                                    <li>Fast-Tracking = Parallel work = More RISK</li>
+                                    <li>Crashing = More resources = More COST</li>
+                                    <li>Lead = Overlap (negative lag)</li>
+                                    <li>Lag = Delay (positive lag)</li>
+                                </ul>
+                            </div>
+                            <div class="cheat-item">
+                                <h4>Key Formulas:</h4>
+                                <ul>
+                                    <li><strong>PERT:</strong> (O + 4M + P) / 6</li>
+                                    <li><strong>Float:</strong> LS - ES or LF - EF</li>
+                                    <li><strong>Critical Path:</strong> Zero float</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="module-actions">
+                    <button class="btn btn-secondary" onclick="markComplete('schedule')">
+                        <i class="fas fa-check"></i> Mark as Complete
+                    </button>
+                    <a href="quiz.html?domain=schedule" class="btn btn-primary">
+                        <i class="fas fa-question-circle"></i> Take Quiz
+                    </a>
                 </div>
             </section>
 
-            <section class="domain-section" id="cost" style="display: none;">
-                <div class="domain-header">
-                    <h1><i class="fas fa-dollar-sign"></i> Cost Management</h1>
-                    <p class="domain-description">Content coming soon...</p>
-                </div>
-            </section>
+           <!-- ============================================
+     COST MANAGEMENT - Replace id="cost" section
+     ============================================ -->
 
-            <section class="domain-section" id="quality" style="display: none;">
-                <div class="domain-header">
-                    <h1><i class="fas fa-check-circle"></i> Quality Management</h1>
-                    <p class="domain-description">Content coming soon...</p>
-                </div>
-            </section>
-
-            <section class="domain-section" id="resource" style="display: none;">
-                <div class="domain-header">
-                    <h1><i class="fas fa-users"></i> Resource Management</h1>
-                    <p class="domain-description">Content coming soon...</p>
-                </div>
-            </section>
-
-            <section class="domain-section" id="communication" style="display: none;">
-                <div class="domain-header">
-                    <h1><i class="fas fa-comments"></i> Communication Management</h1>
-                    <p class="domain-description">Content coming soon...</p>
-                </div>
-            </section>
-
-            <section class="domain-section" id="procurement" style="display: none;">
-                <div class="domain-header">
-                    <h1><i class="fas fa-shopping-cart"></i> Procurement Management</h1>
-                    <p class="domain-description">Content coming soon...</p>
-                </div>
-            </section>
-
-            <section class="domain-section" id="stakeholder" style="display: none;">
-                <div class="domain-header">
-                    <h1><i class="fas fa-handshake"></i> Stakeholder Management</h1>
-                    <p class="domain-description">Content coming soon...</p>
-                </div>
-            </section>
-        </main>
+<section class="domain-section" id="cost" style="display: none;">
+    <div class="domain-header">
+        <h1><i class="fas fa-dollar-sign"></i> Cost Management</h1>
+        <p class="domain-description">Plan, estimate, budget, and control costs to complete project within budget</p>
     </div>
 
-    <script src="js/main.js"></script>
-    <script src="js/learning.js"></script>
-</body>
-</html>
+    <div class="module-card">
+        <div class="module-header" onclick="toggleModule(this)">
+            <h2>1. Overview & Key Concepts</h2>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="module-content">
+            <p><strong>What is Project Cost Management?</strong></p>
+            <p>Cost Management includes processes for planning, estimating, budgeting, financing, funding, managing, and controlling costs.</p>
+            
+            <div class="key-points">
+                <h3>Key Concepts:</h3>
+                <ul>
+                    <li><strong>Cost Baseline:</strong> Approved time-phased budget</li>
+                    <li><strong>Management Reserve:</strong> Budget for unknown risks (not in baseline)</li>
+                    <li><strong>Contingency Reserve:</strong> Budget for known risks (in baseline)</li>
+                    <li><strong>EVM (Earned Value Management):</strong> Integrates scope, schedule, and cost</li>
+                    <li><strong>PV (Planned Value):</strong> Budgeted cost of work scheduled</li>
+                    <li><strong>EV (Earned Value):</strong> Budgeted cost of work performed</li>
+                    <li><strong>AC (Actual Cost):</strong> Actual cost of work performed</li>
+                    <li><strong>BAC (Budget at Completion):</strong> Total planned budget</li>
+                </ul>
+            </div>
+
+            <div class="real-world-example">
+                <h3><i class="fas fa-lightbulb"></i> Real-World Example:</h3>
+                <p>Software project with $100K budget: You planned to spend $50K by month 3 (<strong>PV</strong>). You actually completed work worth $45K (<strong>EV</strong>) but spent $55K (<strong>AC</strong>). This means you're behind schedule (EV < PV) and over budget (AC > EV).</p>
+            </div>
+
+            <div class="exam-tips">
+                <h3><i class="fas fa-exclamation-circle"></i> Common Exam Traps:</h3>
+                <ul>
+                    <li>Management Reserve is NOT in cost baseline</li>
+                    <li>Contingency Reserve IS in cost baseline</li>
+                    <li>EV is always based on BUDGETED cost (not actual)</li>
+                    <li>CPI < 1.0 = Over budget (bad)</li>
+                    <li>SPI < 1.0 = Behind schedule (bad)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="module-card">
+        <div class="module-header" onclick="toggleModule(this)">
+            <h2>2. Key Processes (4 Total)</h2>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="module-content">
+            <div class="process-table">
+                <h3>Cost Management Processes:</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Process</th>
+                            <th>Process Group</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Plan Cost Management</td>
+                            <td>Planning</td>
+                            <td>Establish policies and procedures for planning and managing costs</td>
+                        </tr>
+                        <tr>
+                            <td>Estimate Costs</td>
+                            <td>Planning</td>
+                            <td>Develop approximation of monetary resources needed</td>
+                        </tr>
+                        <tr>
+                            <td>Determine Budget</td>
+                            <td>Planning</td>
+                            <td>Aggregate estimated costs to establish cost baseline</td>
+                        </tr>
+                        <tr>
+                            <td>Control Costs</td>
+                            <td>Monitoring & Controlling</td>
+                            <td>Monitor status and manage changes to cost baseline</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="module-card">
+        <div class="module-header" onclick="toggleModule(this)">
+            <h2>3. Earned Value Management (EVM) Formulas</h2>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="module-content">
+            <div class="formula-box">
+                <h3>Basic EVM Values:</h3>
+                <ul>
+                    <li><strong>PV (Planned Value):</strong> What you PLANNED to spend</li>
+                    <li><strong>EV (Earned Value):</strong> Value of work COMPLETED</li>
+                    <li><strong>AC (Actual Cost):</strong> What you ACTUALLY spent</li>
+                    <li><strong>BAC (Budget at Completion):</strong> Total project budget</li>
+                </ul>
+            </div>
+
+            <div class="formula-box">
+                <h3>Variance Formulas:</h3>
+                <div class="formula">
+                    <strong>CV (Cost Variance) = EV - AC</strong><br>
+                    <em>Positive = Under budget (good), Negative = Over budget (bad)</em>
+                </div>
+                <div class="formula">
+                    <strong>SV (Schedule Variance) = EV - PV</strong><br>
+                    <em>Positive = Ahead of schedule (good), Negative = Behind schedule (bad)</em>
+                </div>
+            </div>
+
+            <div class="formula-box">
+                <h3>Performance Indices:</h3>
+                <div class="formula">
+                    <strong>CPI (Cost Performance Index) = EV / AC</strong><br>
+                    <em>CPI > 1.0 = Under budget (good), CPI < 1.0 = Over budget (bad)</em>
+                </div>
+                <div class="formula">
+                    <strong>SPI (Schedule Performance Index) = EV / PV</strong><br>
+                    <em>SPI > 1.0 = Ahead (good), SPI < 1.0 = Behind (bad)</em>
+                </div>
+            </div>
+
+            <div class="formula-box">
+                <h3>Forecasting Formulas:</h3>
+                <div class="formula">
+                    <strong>EAC (Estimate at Completion) = BAC / CPI</strong><br>
+                    <em>Most common formula - assumes current performance continues</em>
+                </div>
+                <div class="formula">
+                    <strong>ETC (Estimate to Complete) = EAC - AC</strong><br>
+                    <em>How much more money needed to finish</em>
+                </div>
+                <div class="formula">
+                    <strong>VAC (Variance at Completion) = BAC - EAC</strong><br>
+                    <em>Positive = Under budget, Negative = Over budget</em>
+                </div>
+                <div class="formula">
+                    <strong>TCPI (To-Complete Performance Index) = (BAC - EV) / (BAC - AC)</strong><br>
+                    <em>Performance needed to meet BAC</em>
+                </div>
+            </div>
+
+            <div class="real-world-example">
+                <h3><i class="fas fa-lightbulb"></i> Complete EVM Example:</h3>
+                <p><strong>Given:</strong></p>
+                <ul>
+                    <li>BAC = $100,000</li>
+                    <li>PV = $50,000 (planned to complete 50% by now)</li>
+                    <li>EV = $40,000 (actually completed 40%)</li>
+                    <li>AC = $45,000 (spent $45K)</li>
+                </ul>
+                <p><strong>Calculate:</strong></p>
+                <ul>
+                    <li>CV = EV - AC = $40K - $45K = <strong>-$5K (over budget)</strong></li>
+                    <li>SV = EV - PV = $40K - $50K = <strong>-$10K (behind schedule)</strong></li>
+                    <li>CPI = EV / AC = $40K / $45K = <strong>0.89 (over budget)</strong></li>
+                    <li>SPI = EV / PV = $40K / $50K = <strong>0.80 (behind schedule)</strong></li>
+                    <li>EAC = BAC / CPI = $100K / 0.89 = <strong>$112,360 (projected final cost)</strong></li>
+                    <li>ETC = EAC - AC = $112,360 - $45K = <strong>$67,360 (more needed)</strong></li>
+                    <li>VAC = BAC - EAC = $100K - $112,360 = <strong>-$12,360 (over budget)</strong></li>
+                </ul>
+            </div>
+
+            <div class="exam-tips">
+                <h3><i class="fas fa-exclamation-circle"></i> EVM Exam Tips:</h3>
+                <ul>
+                    <li>Memorize ALL formulas - they appear frequently!</li>
+                    <li>EV is ALWAYS based on budgeted cost (not actual)</li>
+                    <li>CPI and SPI: > 1.0 is good, < 1.0 is bad</li>
+                    <li>CV and SV: Positive is good, Negative is bad</li>
+                    <li>Most common EAC formula: BAC / CPI</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="module-card">
+        <div class="module-header" onclick="toggleModule(this)">
+            <h2>4. Quick Revision Cheat Sheet</h2>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="module-content">
+            <div class="cheat-sheet">
+                <div class="cheat-item">
+                    <h4>EVM Quick Reference:</h4>
+                    <ul>
+                        <li><strong>CV = EV - AC</strong> (Cost Variance)</li>
+                        <li><strong>SV = EV - PV</strong> (Schedule Variance)</li>
+                        <li><strong>CPI = EV / AC</strong> (Cost Performance)</li>
+                        <li><strong>SPI = EV / PV</strong> (Schedule Performance)</li>
+                        <li><strong>EAC = BAC / CPI</strong> (Estimate at Completion)</li>
+                        <li><strong>ETC = EAC - AC</strong> (Estimate to Complete)</li>
+                        <li><strong>VAC = BAC - EAC</strong> (Variance at Completion)</li>
+                    </ul>
+                </div>
+                <div class="cheat-item">
+                    <h4>Remember:</h4>
+                    <ul>
+                        <li>4 processes (3 Planning, 1 M&C)</li>
+                        <li>Management Reserve NOT in baseline</li>
+                        <li>Contingency Reserve IN baseline</li>
+                        <li>Index > 1.0 = Good performance</li>
+                        <li>Variance > 0 = Good performance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="module-actions">
+        <button class="btn btn-secondary" onclick="markComplete('cost')">
+            <i class="fas fa-check"></i> Mark as Complete
+        </button>
+        <a href="quiz.html?domain=cost" class="btn btn-primary">
+            <i class="fas fa-question-circle"></i> Take Quiz
+        </a>
+    </div>
+</section>
+
+
+<!-- ============================================
+     QUALITY MANAGEMENT - Replace id="quality" section
+     ============================================ -->
+
+<section class="domain-section" id="quality" style="display: none;">
+    <div class="domain-header">
+        <h1><i class="fas fa-award"></i> Quality Management</h1>
+        <p class="domain-description">Incorporate quality policies and ensure project meets requirements</p>
+    </div>
+
+    <div class="module-card">
+        <div class="module-header" onclick="toggleModule(this)">
+            <h2>1. Overview & Key Concepts</h2>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="module-content">
+            <p><strong>What is Project Quality Management?</strong></p>
+            <p>Quality Management includes processes for incorporating the organization's quality policy regarding planning, managing, and controlling project and product quality requirements.</p>
+            
+            <div class="key-points">
+                <h3>Key Concepts:</h3>
+                <ul>
+                    <li><strong>Quality:</strong> Degree to which deliverables meet requirements</li>
+                    <li><strong>Grade:</strong> Category assigned to deliverables (low grade ≠ low quality)</li>
+                    <li><strong>Prevention:</strong> Keep errors out of process</li>
+                    <li><strong>Inspection:</strong> Keep errors out of customer's hands</li>
+                    <li><strong>Quality Assurance (QA):</strong> Process-oriented (doing things right)</li>
+                    <li><strong>Quality Control (QC):</strong> Product-oriented (checking results)</li>
+                    <li><strong>Cost of Quality:</strong> Cost of conformance + cost of non-conformance</li>
+                </ul>
+            </div>
+
+            <div class="real-world-example">
+                <h3><i class="fas fa-lightbulb"></i> Real-World Example:</h3>
+                <p>Building a car: <strong>Quality</strong> = Meets safety standards, runs reliably. <strong>Grade</strong> = Economy vs luxury model. A low-grade economy car can still have high quality (reliable, safe). <strong>Prevention</strong> = Training workers, using quality materials. <strong>Inspection</strong> = Testing each car before delivery.</p>
+            </div>
+
+            <div class="exam-tips">
+                <h3><i class="fas fa-exclamation-circle"></i> Common Exam Traps:</h3>
+                <ul>
+                    <li>Low grade ≠ Low quality (they're different!)</li>
+                    <li>Prevention over Inspection (cheaper to prevent)</li>
+                    <li>Quality Assurance = Process focus</li>
+                    <li>Quality Control = Product focus</li>
+                    <li>Gold plating = Adding extra features (bad!)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="module-card">
+        <div class="module-header" onclick="toggleModule(this)">
+            <h2>2. Key Processes (3 Total)</h2>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="module-content">
+            <div class="process-table">
+                <h3>Quality Management Processes:</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Process</th>
+                            <th>Process Group</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Plan Quality Management</td>
+                            <td>Planning</td>
+                            <td>Identify quality requirements and standards</td>
+                        </tr>
+                        <tr>
+                            <td>Manage Quality</td>
+                            <td>Executing</td>
+                            <td>Translate quality plan into executable quality activities (QA)</td>
+                        </tr>
+                        <tr>
+                            <td>Control Quality</td>
+                            <td>Monitoring & Controlling</td>
+                            <td>Monitor and record results to assess performance (QC)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="comparison-table">
+                <h3>Manage Quality vs Control Quality:</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Aspect</th>
+                            <th>Manage Quality (QA)</th>
+                            <th>Control Quality (QC)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Focus</strong></td>
+                            <td>PROCESS</td>
+                            <td>PRODUCT</td>
+                        </tr>
+                        <tr>
+                            <td><strong>When</strong></td>
+                            <td>During work</td>
+                            <td>After work</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Purpose</strong></td>
+                            <td>Prevent defects</td>
+                            <td>Detect defects</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Process Group</strong></td>
+                            <td>Executing</td>
+                            <td>Monitoring & Controlling</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Example</strong></td>
+                            <td>Process audits, training</td>
+                            <td>Testing, inspections</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="module-card">
+        <div class="module-header" onclick="toggleModule(this)">
+            <h2>3. Quality Tools & Techniques</h2>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="module-content">
+            <div class="key-points">
+                <h3>Seven Basic Quality Tools:</h3>
+                <ul>
+                    <li><strong>Cause and Effect Diagram (Ishikawa/Fishbone):</strong> Identify root causes</li>
+                    <li><strong>Flowchart:</strong> Show process steps and decision points</li>
+                    <li><strong>Checksheet:</strong> Organize data collection</li>
+                    <li><strong>Pareto Chart:</strong> 80/20 rule - identify vital few causes</li>
+                    <li><strong>Histogram:</strong> Show frequency distribution</li>
+                    <li><strong>Control Chart:</strong> Monitor process stability over time</li>
+                    <li><strong>Scatter Diagram:</strong> Show relationship between two variables</li>
+                </ul>
+            </div>
+
+            <div class="key-points">
+                <h3>Other Important Tools:</h3>
+                <ul>
+                    <li><strong>Cost-Benefit Analysis:</strong> Compare cost of quality vs benefits</li>
+                    <li><strong>Cost of Quality:</strong> Prevention + Appraisal + Failure costs</li>
+                    <li><strong>Benchmarking:</strong> Compare practices with other organizations</li>
+                    <li><strong>Design of Experiments:</strong> Statistical method to identify factors</li>
+                    <li><strong>Statistical Sampling:</strong> Select part of population for inspection</li>
+                </ul>
+            </div>
+
+            <div class="exam-tips">
+                <h3><i class="fas fa-exclamation-circle"></i> Tool Tips:</h3>
+                <ul>
+                    <li>Pareto Chart = 80/20 rule (80% problems from 20% causes)</li>
+                    <li>Control Chart shows if process is "in control"</li>
+                    <li>Rule of Seven: 7 consecutive points on one side = out of control</li>
+                    <li>Ishikawa diagram also called Fishbone or Cause-and-Effect</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="module-card">
+        <div class="module-header" onclick="toggleModule(this)">
+            <h2>4. Cost of Quality</h2>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="module-content">
+            <div class="formula-box">
+                <h3>Cost of Quality Components:</h3>
+                <div class="formula">
+                    <strong>Cost of Quality = Cost of Conformance + Cost of Non-Conformance</strong>
+                </div>
+            </div>
+
+            <div class="key-points">
+                <h3>Cost of Conformance (Good costs):</h3>
+                <ul>
+                    <li><strong>Prevention Costs:</strong> Training, process documentation, equipment</li>
+                    <li><strong>Appraisal Costs:</strong> Testing, inspections, audits</li>
+                </ul>
+            </div>
+
+            <div class="key-points">
+                <h3>Cost of Non-Conformance (Bad costs):</h3>
+                <ul>
+                    <li><strong>Internal Failure:</strong> Rework, scrap (found before delivery)</li>
+                    <li><strong>External Failure:</strong> Warranty, liability, lost business (found after delivery)</li>
+                </ul>
+            </div>
+
+            <div class="real-world-example">
+                <h3><i class="fas fa-lightbulb"></i> Example:</h3>
+                <p><strong>Prevention:</strong> $10K for training developers<br>
+                <strong>Appraisal:</strong> $5K for testing<br>
+                <strong>Internal Failure:</strong> $20K for fixing bugs before release<br>
+                <strong>External Failure:</strong> $100K for customer complaints and fixes<br>
+                <strong>Lesson:</strong> Spending more on prevention/appraisal reduces expensive failures!</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="module-card">
+        <div class="module-header" onclick="toggleModule(this)">
+            <h2>5. Quick Revision Cheat Sheet</h2>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="module-content">
+            <div class="cheat-sheet">
+                <div class="cheat-item">
+                    <h4>Remember:</h4>
+                    <ul>
+                        <li>3 processes (1 Planning, 1 Executing, 1 M&C)</li>
+                        <li>Quality ≠ Grade</li>
+                        <li>Prevention > Inspection</li>
+                        <li>QA = Process focus (Manage Quality)</li>
+                        <li>QC = Product focus (Control Quality)</li>
+                        <li>Gold plating = Bad (adds scope)</li>
+                    </ul>
+                </div>
+                <div class="cheat-item">
+                    <h4>Seven Basic Tools:</h4>
+                    <ul>
+                        <li>Cause & Effect (Fishbone)</li>
+                        <li>Flowchart</li>
+                        <li>Checksheet</li>
+                        <li>Pareto (80/20)</li>
+                        <li>Histogram</li>
+                        <li>Control Chart</li>
+                        <li>Scatter Diagram</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="module-actions">
+        <button class="btn btn-secondary" onclick="markComplete('quality')">
+            <i class="fas fa-check"></i> Mark as Complete
+        </button>
+        <a href="quiz.html?domain=quality" class="btn btn-primary">
+            <i class="fas fa-question-circle"></i> Take Quiz
+        </a>
+    </div>
+</section>
+
+<!-- Continue with remaining domains in next file... -->
+ <!-- ============================================
+     RESOURCE MANAGEMENT - Replace id="resource" section
+     ============================================ -->
+
+<section class="domain-section" id="resource" style="display: none;">
+    <div class="domain-header">
+        <h1><i class="fas fa-users"></i> Resource Management</h1>
+        <p class="domain-description">Identify, acquire, and manage resources needed for project success</p>
+    </div>
+
+    <div class="module-card">
+        <div class="module-header" onclick="toggleModule(this)">
+            <h2>1. Overview & Key Concepts</h2>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="module-content">
+            <p><strong>What is Project Resource Management?</strong></p>
+            <p>Resource Management includes processes to identify, acquire, and manage the resources needed for successful project completion.</p>
+            
+            <div class="key-points">
+                <h3>Key Concepts:</h3>
+                <ul>
+                    <li><strong>Resources:</strong> Team members, equipment, materials, facilities</li>
+                    <li><strong>Resource Histogram:</strong> Bar chart showing resource allocation over time</li>
+                    <li><strong>Resource Leveling:</strong> Adjust schedule to balance resource demand</li>
+                    <li><strong>Resource Smoothing:</strong> Adjust activities within float to balance resources</li>
+                    <li><strong>Team Development:</strong> Forming, Storming, Norming, Performing, Adjourning</li>
+                    <li><strong>Conflict Resolution:</strong> Collaborate, Compromise, Smooth, Force, Withdraw</li>
+                    <li><strong>Power Types:</strong> Formal, Reward, Penalty, Expert, Referent</li>
+                </ul>
+            </div>
+
+            <div class="real-world-example">
+                <h3><i class="fas fa-lightbulb"></i> Real-World Example:</h3>
+                <p>Software project needs 5 developers but only 3 available: <strong>Resource Leveling</strong> = Extend schedule to work with 3 developers. <strong>Resource Smoothing</strong> = Move non-critical tasks to when developers are free (within float). Team goes through <strong>Tuckman's stages</strong>: Forming (getting to know), Storming (conflicts), Norming (working together), Performing (high productivity).</p>
+            </div>
+
+            <div class="exam-tips">
+                <h3><i class="fas fa-exclamation-circle"></i> Common Exam Traps:</h3>
+                <ul>
+                    <li>Resource Leveling CAN extend schedule</li>
+                    <li>Resource Smoothing does NOT extend schedule (uses float)</li>
+                    <li>Collaborate = Best conflict resolution (win-win)</li>
+                    <li>Force/Direct = Worst (win-lose)</li>
+                    <li>Team development: Forming → Storming → Norming → Performing → Adjourning</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="module-card">
+        <div class="module-header" onclick="toggleModule(this)">
+            <h2>2. Key Processes (6 Total)</h2>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="module-content">
+            <div class="process-table">
+                <h3>Resource Management Processes:</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Process</th>
+                            <th>Process Group</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Plan Resource Management</td>
+                            <td>Planning</td>
+                            <td>Define how to estimate, acquire, manage, and utilize resources</td>
+                        </tr>
+                        <tr>
+                            <td>Estimate Activity Resources</td>
+                            <td>Planning</td>
+                            <td>Estimate team resources and type/quantities of materials</td>
+                        </tr>
+                        <tr>
+                            <td>Acquire Resources</td>
+                            <td>Executing</td>
+                            <td>Obtain team members, facilities, equipment, materials</td>
+                        </tr>
+                        <tr>
+                            <td>Develop Team</td>
+                            <td>Executing</td>
+                            <td>Improve competencies and team interaction</td>
+                        </tr>
+                        <tr>
+                            <td>Manage Team</td>
+                            <td>Executing</td>
+                            <td>Track performance, provide feedback, resolve issues</td>
+                        </tr>
+                        <tr>
+                            <td>Control Resources</td>
+                            <td>Monitoring & Controlling</td>
+                            <td>Ensure resources are available and allocated as planned</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="module-card">
+        <div class="module-header" onclick="toggleModule(this)">
+            <h2>3. Team Development Stages (Tuckman Model)</h2>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="module-content">
+            <div class="key-points">
+                <h3>Five Stages of Team Development:</h3>
+                <ul>
+                    <li><strong>1. Forming:</strong> Team meets, learns about project, roles unclear</li>
+                    <li><strong>2. Storming:</strong> Conflicts arise, members challenge each other</li>
+                    <li><strong>3. Norming:</strong> Team works together, establishes norms</li>
+                    <li><strong>4. Performing:</strong> Team functions as well-organized unit, high productivity</li>
+                    <li><strong>5. Adjourning:</strong> Project ends, team disbands</li>
+                </ul>
+            </div>
+
+            <div class="real-world-example">
+                <h3><i class="fas fa-lightbulb"></i> Example:</h3>
+                <p><strong>Forming:</strong> "Nice to meet you all!"<br>
+                <strong>Storming:</strong> "I disagree with your approach!"<br>
+                <strong>Norming:</strong> "Let's work together on this."<br>
+                <strong>Performing:</strong> "We're crushing our goals!"<br>
+                <strong>Adjourning:</strong> "Thanks for everything, goodbye!"</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="module-card">
+        <div class="module-header" onclick="toggleModule(this)">
+            <h2>4. Conflict Resolution Techniques</h2>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="module-content">
+            <div class="comparison-table">
+                <h3>Conflict Resolution Methods (Best to Worst):</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Technique</th>
+                            <th>Description</th>
+                            <th>Result</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>1. Collaborate/Problem-Solve</strong></td>
+                            <td>Work together to find solution that satisfies all</td>
+                            <td>Win-Win (BEST)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>2. Compromise/Reconcile</strong></td>
+                            <td>Each party gives up something</td>
+                            <td>Lose-Lose (but acceptable)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>3. Smooth/Accommodate</strong></td>
+                            <td>Emphasize agreement, downplay differences</td>
+                            <td>Temporary fix</td>
+                        </tr>
+                        <tr>
+                            <td><strong>4. Force/Direct</strong></td>
+                            <td>Push one viewpoint at expense of others</td>
+                            <td>Win-Lose (WORST)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>5. Withdraw/Avoid</strong></td>
+                            <td>Retreat from conflict situation</td>
+                            <td>Lose-Lose (delays resolution)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="exam-tips">
+                <h3><i class="fas fa-exclamation-circle"></i> Exam Tips:</h3>
+                <ul>
+                    <li>Collaborate is ALWAYS the best approach (win-win)</li>
+                    <li>Force/Direct is WORST (creates resentment)</li>
+                    <li>Compromise = Both parties give something up</li>
+                    <li>Withdraw = Avoiding the issue (not solving it)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="module-card">
+        <div class="module-header" onclick="toggleModule(this)">
+            <h2>5. Power Types</h2>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="module-content">
+            <div class="key-points">
+                <h3>Types of Power:</h3>
+                <ul>
+                    <li><strong>Formal/Legitimate:</strong> Based on position (PM authority)</li>
+                    <li><strong>Reward:</strong> Ability to give rewards (bonuses, recognition)</li>
+                    <li><strong>Penalty/Coercive:</strong> Ability to punish (least effective)</li>
+                    <li><strong>Expert:</strong> Based on knowledge/skills (very effective)</li>
+                    <li><strong>Referent:</strong> Based on respect/charisma (most effective)</li>
+                </ul>
+            </div>
+
+            <div class="exam-tips">
+                <h3><i class="fas fa-exclamation-circle"></i> Power Tips:</h3>
+                <ul>
+                    <li>Referent power = Most effective (people follow willingly)</li>
+                    <li>Penalty power = Least effective (creates fear)</li>
+                    <li>Expert power = Very effective (based on knowledge)</li>
+                    <li>PM should rely on expert and referent power</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="module-card">
+        <div class="module-header" onclick="toggleModule(this)">
+            <h2>6. Quick Revision Cheat Sheet</h2>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="module-content">
+            <div class="cheat-sheet">
+                <div class="cheat-item">
+                    <h4>Remember:</h4>
+                    <ul>
+                        <li>6 processes (2 Planning, 3 Executing, 1 M&C)</li>
+                        <li>Resource Leveling = CAN extend schedule</li>
+                        <li>Resource Smoothing = Does NOT extend schedule</li>
+                        <li>Tuckman: Form → Storm → Norm → Perform → Adjourn</li>
+                        <li>Best conflict resolution: Collaborate (win-win)</li>
+                        <li>Worst conflict resolution: Force (win-lose)</li>
+                    </ul>
+                </div>
+                <div class="cheat-item">
+                    <h4>Power Types (Best to Worst):</h4>
+                    <ul>
+                        <li>1. Referent (respect/charisma)</li>
+                        <li>2. Expert (knowledge)</li>
+                        <li>3. Formal (position)</li>
+                        <li>4. Reward (incentives)</li>
+                        <li>5. Penalty (punishment)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="module-actions">
+        <button class="btn btn-secondary" onclick="markComplete('resource')">
+            <i class="fas fa-check"></i> Mark as Complete
+        </button>
+        <a href="quiz.html?domain=resource" class="btn btn-primary">
+            <i class="fas fa-question-circle"></i> Take Quiz
+        </a>
+    </div>
+</section>
+
+
+<!-- ============================================
+     COMMUNICATION MANAGEMENT - Replace id="communication" section
+     ============================================ -->
+
+<section class="domain-section" id="communication" style="display: none;">
+    <div class="domain-header">
+        <h1><i class="fas fa-comments"></i> Communication Management</h1>
+        <p class="domain-description">Ensure timely and appropriate generation, collection, and distribution of project information</p>
+    </div>
+
+    <div class="module-card">
+        <div class="module-header" onclick="toggleModule(this)">
+            <h2>1. Overview & Key Concepts</h2>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="module-content">
+            <p><strong>What is Project Communication Management?</strong></p>
+            <p>Communication Management includes processes to ensure timely and appropriate planning, collection, creation, distribution, storage, retrieval, and disposition of project information.</p>
+            
+            <div class="key-points">
+                <h3>Key Concepts:</h3>
+                <ul>
+                    <li><strong>Communication Channels:</strong> n(n-1)/2 where n = number of people</li>
+                    <li><strong>Communication Methods:</strong> Interactive, Push, Pull</li>
+                    <li><strong>Communication Models:</strong> Sender, Encoding, Medium, Decoding, Receiver, Feedback, Noise</li>
+                    <li><strong>Effective Listening:</strong> Active listening, asking questions, acknowledging</li>
+                    <li><strong>Communication Barriers:</strong> Language, culture, distance, technology</li>
+                    <li><strong>90% of PM Time:</strong> Spent on communication</li>
+                </ul>
+            </div>
+
+            <div class="formula-box">
+                <h3>Communication Channels Formula:</h3>
+                <div class="formula">
+                    <strong>Channels = n(n-1)/2</strong><br>
+                    <em>where n = number of people</em>
+                </div>
+                <p class="formula-example">
+                    <strong>Example:</strong> Team of 5 people<br>
+                    Channels = 5(5-1)/2 = 5×4/2 = 10 communication channels
+                </p>
+                <p class="formula-example">
+                    <strong>Example:</strong> Add 1 person (now 6 total)<br>
+                    Channels = 6(6-1)/2 = 6×5/2 = 15 channels (5 more channels!)
+                </p>
+            </div>
+
+            <div class="real-world-example">
+                <h3><i class="fas fa-lightbulb"></i> Real-World Example:</h3>
+                <p>Project with 4 team members has 6 communication channels. Add 1 new member (5 total) = 10 channels (4 more!). This shows why larger teams need more structured communication. <strong>Interactive</strong> = Video call (real-time). <strong>Push</strong> = Email (sent to recipients). <strong>Pull</strong> = Wiki/portal (people access when needed).</p>
+            </div>
+
+            <div class="exam-tips">
+                <h3><i class="fas fa-exclamation-circle"></i> Common Exam Traps:</h3>
+                <ul>
+                    <li>Memorize formula: n(n-1)/2</li>
+                    <li>PM spends 90% of time communicating</li>
+                    <li>Interactive = Most effective (real-time feedback)</li>
+                    <li>Formal written = Most important for complex issues</li>
+                    <li>Noise = Anything that interferes with communication</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="module-card">
+        <div class="module-header" onclick="toggleModule(this)">
+            <h2>2. Key Processes (3 Total)</h2>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="module-content">
+            <div class="process-table">
+                <h3>Communication Management Processes:</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Process</th>
+                            <th>Process Group</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Plan Communications Management</td>
+                            <td>Planning</td>
+                            <td>Develop approach for project communications</td>
+                        </tr>
+                        <tr>
+                            <td>Manage Communications</td>
+                            <td>Executing</td>
+                            <td>Create, collect, distribute, store, and retrieve information</td>
+                        </tr>
+                        <tr>
+                            <td>Monitor Communications</td>
+                            <td>Monitoring & Controlling</td>
+                            <td>Ensure information needs are met</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="module-card">
+        <div class="module-header" onclick="toggleModule(this)">
+            <h2>3. Communication Methods</h2>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="module-content">
+            <div class="comparison-table">
+                <h3>Three Communication Methods:</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Method</th>
+                            <th>Description</th>
+                            <th>Examples</th>
+                            <th>Best For</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Interactive</strong></td>
+                            <td>Real-time, multidirectional exchange</td>
+                            <td>Meetings, phone calls, video conferences</td>
+                            <td>Complex discussions, immediate feedback</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Push</strong></td>
+                            <td>Sent to specific recipients</td>
+                            <td>Emails, memos, reports, letters</td>
+                            <td>Distributing information to many people</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Pull</strong></td>
+                            <td>Recipients access at their convenience</td>
+                            <td>Intranet, wikis, knowledge repositories</td>
+                            <td>Large volumes, self-service access</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="exam-tips">
+                <h3><i class="fas fa-exclamation-circle"></i> Method Tips:</h3>
+                <ul>
+                    <li>Interactive = Most effective (real-time feedback)</li>
+                    <li>Push = Good for ensuring receipt</li>
+                    <li>Pull = Good for large volumes of info</li>
+                    <li>Choose method based on urgency and complexity</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="module-card">
+        <div class="module-header" onclick="toggleModule(this)">
+            <h2>4. Communication Model</h2>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="module-content">
+            <div class="key-points">
+                <h3>Basic Communication Model Components:</h3>
+                <ul>
+                    <li><strong>Sender:</strong> Person transmitting the message</li>
+                    <li><strong>Encoding:</strong> Converting thoughts into language/symbols</li>
+                    <li><strong>Message:</strong> Output of encoding</li>
+                    <li><strong>Medium:</strong> Method used to convey message (email, verbal, etc.)</li>
+                    <li><strong>Noise:</strong> Anything that interferes with transmission</li>
+                    <li><strong>Decoding:</strong> Receiver interprets the message</li>
+                    <li><strong>Receiver:</strong> Person receiving the message</li>
+                    <li><strong>Feedback:</strong> Response from receiver to sender</li>
+                </ul>
+            </div>
+
+            <div class="real-world-example">
+                <h3><i class="fas fa-lightbulb"></i> Example:</h3>
+                <p><strong>Sender:</strong> PM wants to communicate deadline<br>
+                <strong>Encoding:</strong> PM writes "Project due March 15"<br>
+                <strong>Medium:</strong> Email<br>
+                <strong>Noise:</strong> Email goes to spam, or unclear wording<br>
+                <strong>Receiver:</strong> Team member<br>
+                <strong>Decoding:</strong> Team member reads and understands<br>
+                <strong>Feedback:</strong> Team member replies "Got it, thanks!"</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="module-card">
+        <div class="module-header" onclick="toggleModule(this)">
+            <h2>5. Quick Revision Cheat Sheet</h2>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="module-content">
+            <div class="cheat-sheet">
+                <div class="cheat-item">
+                    <h4>Remember:</h4>
+                    <ul>
+                        <li>3 processes (1 Planning, 1 Executing, 1 M&C)</li>
+                        <li>Channels = n(n-1)/2</li>
+                        <li>PM spends 90% time communicating</li>
+                        <li>Interactive = Most effective</li>
+                        <li>Formal written = Most important</li>
+                        <li>Noise = Communication interference</li>
+                    </ul>
+                </div>
+                <div class="cheat-item">
+                    <h4>Communication Methods:</h4>
+                    <ul>
+                        <li><strong>Interactive:</strong> Real-time (meetings)</li>
+                        <li><strong>Push:</strong> Sent to recipients (email)</li>
+                        <li><strong>Pull:</strong> Self-service (wiki)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="module-actions">
+        <button class="btn btn-secondary" onclick="markComplete('communication')">
+            <i class="fas fa-check"></i> Mark as Complete
+        </button>
+        <a href="quiz.html?domain=communication" class="btn btn-primary">
+            <i class="fas fa-question-circle"></i> Take Quiz
+        </a>
+    </div>
+</section>
+
+<!-- Continue with remaining domains... -->
+ <!-- ============================================
+     PROCUREMENT MANAGEMENT - Replace id="procurement" section
+     ============================================ -->
+
+<section class="domain-section" id="procurement" style="display: none;">
+    <div class="domain-header">
+        <h1><i class="fas fa-handshake"></i> Procurement Management</h1>
+        <p class="domain-description">Purchase or acquire products, services, or results from outside the project team</p>
+    </div>
+
+    <div class="module-card">
+        <div class="module-header" onclick="toggleModule(this)">
+            <h2>1. Overview & Key Concepts</h2>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="module-content">
+            <p><strong>What is Project Procurement Management?</strong></p>
+            <p>Procurement Management includes processes to purchase or acquire products, services, or results needed from outside the project team.</p>
+            
+            <div class="key-points">
+                <h3>Key Concepts:</h3>
+                <ul>
+                    <li><strong>Buyer:</strong> Organization purchasing (customer)</li>
+                    <li><strong>Seller:</strong> Organization providing goods/services (vendor)</li>
+                    <li><strong>Contract:</strong> Legal agreement between buyer and seller</li>
+                    <li><strong>Procurement Documents:</strong> RFP, RFQ, RFI, IFB</li>
+                    <li><strong>Source Selection:</strong> Choosing the best seller</li>
+                    <li><strong>Make-or-Buy:</strong> Decision to produce internally or purchase</li>
+                    <li><strong>Claims Administration:</strong> Managing contract disputes</li>
+                </ul>
+            </div>
+
+            <div class="real-world-example">
+                <h3><i class="fas fa-lightbulb"></i> Real-World Example:</h3>
+                <p>Building a website: <strong>Make-or-Buy</strong> decision = Build in-house or hire agency? If hiring, send <strong>RFP</strong> (Request for Proposal) to agencies. Review proposals, select best vendor using <strong>source selection criteria</strong>. Sign <strong>contract</strong>. Monitor work and manage any <strong>claims</strong> if disputes arise. Finally, <strong>close procurement</strong> when work is complete.</p>
+            </div>
+
+            <div class="exam-tips">
+                <h3><i class="fas fa-exclamation-circle"></i> Common Exam Traps:</h3>
+                <ul>
+                    <li>Buyer = Customer (the one paying)</li>
+                    <li>Seller = Vendor (the one providing)</li>
+                    <li>Contract is legally binding</li>
+                    <li>Changes must go through formal change control</li>
+                    <li>Procurement closes before project closes</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="module-card">
+        <div class="module-header" onclick="toggleModule(this)">
+            <h2>2. Key Processes (3 Total)</h2>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="module-content">
+            <div class="process-table">
+                <h3>Procurement Management Processes:</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Process</th>
+                            <th>Process Group</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Plan Procurement Management</td>
+                            <td>Planning</td>
+                            <td>Document procurement decisions and approach</td>
+                        </tr>
+                        <tr>
+                            <td>Conduct Procurements</td>
+                            <td>Executing</td>
+                            <td>Obtain seller responses, select seller, award contract</td>
+                        </tr>
+                        <tr>
+                            <td>Control Procurements</td>
+                            <td>Monitoring & Controlling</td>
+                            <td>Manage relationships, monitor performance, make changes</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="module-card">
+        <div class="module-header" onclick="toggleModule(this)">
+            <h2>3. Contract Types</h2>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="module-content">
+            <div class="comparison-table">
+                <h3>Three Main Contract Types:</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Contract Type</th>
+                            <th>Description</th>
+                            <th>Risk to Buyer</th>
+                            <th>Risk to Seller</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Fixed Price (FP/FFP)</strong></td>
+                            <td>Set price for defined scope</td>
+                            <td>LOW</td>
+                            <td>HIGH</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cost Reimbursable (CR/CPFF)</strong></td>
+                            <td>Pay actual costs plus fee</td>
+                            <td>HIGH</td>
+                            <td>LOW</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Time & Materials (T&M)</strong></td>
+                            <td>Pay for time and materials used</td>
+                            <td>MEDIUM</td>
+                            <td>MEDIUM</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="key-points">
+                <h3>Contract Type Details:</h3>
+                <ul>
+                    <li><strong>Fixed Price (FP):</strong>
+                        <ul>
+                            <li>FFP = Firm Fixed Price (most common)</li>
+                            <li>FPIF = Fixed Price Incentive Fee</li>
+                            <li>Best when scope is well-defined</li>
+                            <li>Seller bears cost risk</li>
+                        </ul>
+                    </li>
+                    <li><strong>Cost Reimbursable (CR):</strong>
+                        <ul>
+                            <li>CPFF = Cost Plus Fixed Fee</li>
+                            <li>CPIF = Cost Plus Incentive Fee</li>
+                            <li>CPAF = Cost Plus Award Fee</li>
+                            <li>Best when scope is uncertain</li>
+                            <li>Buyer bears cost risk</li>
+                        </ul>
+                    </li>
+                    <li><strong>Time & Materials (T&M):</strong>
+                        <ul>
+                            <li>Hybrid of FP and CR</li>
+                            <li>Good for staff augmentation</li>
+                            <li>Shared risk</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="exam-tips">
+                <h3><i class="fas fa-exclamation-circle"></i> Contract Tips:</h3>
+                <ul>
+                    <li>Fixed Price = LOW risk to buyer, HIGH risk to seller</li>
+                    <li>Cost Reimbursable = HIGH risk to buyer, LOW risk to seller</li>
+                    <li>Use FP when scope is clear</li>
+                    <li>Use CR when scope is uncertain</li>
+                    <li>Incentive contracts align buyer and seller goals</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="module-card">
+        <div class="module-header" onclick="toggleModule(this)">
+            <h2>4. Procurement Documents</h2>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="module-content">
+            <div class="key-points">
+                <h3>Common Procurement Documents:</h3>
+                <ul>
+                    <li><strong>RFP (Request for Proposal):</strong> Detailed proposal requested, includes price and approach</li>
+                    <li><strong>RFQ (Request for Quotation):</strong> Price quote requested for specific items</li>
+                    <li><strong>RFI (Request for Information):</strong> General information about vendor capabilities</li>
+                    <li><strong>IFB (Invitation for Bid):</strong> Sealed bids, lowest price typically wins</li>
+                    <li><strong>SOW (Statement of Work):</strong> Describes work to be performed</li>
+                    <li><strong>Terms & Conditions:</strong> Legal requirements and obligations</li>
+                </ul>
+            </div>
+
+            <div class="real-world-example">
+                <h3><i class="fas fa-lightbulb"></i> When to Use Each:</h3>
+                <p><strong>RFI:</strong> "Tell us about your company and services"<br>
+                <strong>RFQ:</strong> "How much for 100 laptops?"<br>
+                <strong>RFP:</strong> "Propose how you'll build our website, including approach and cost"<br>
+                <strong>IFB:</strong> "Submit sealed bid for construction project"</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="module-card">
+        <div class="module-header" onclick="toggleModule(this)">
+            <h2>5. Source Selection Criteria</h2>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="module-content">
+            <div class="key-points">
+                <h3>Common Selection Criteria:</h3>
+                <ul>
+                    <li><strong>Price/Cost:</strong> Total cost of proposal</li>
+                    <li><strong>Technical Capability:</strong> Ability to deliver</li>
+                    <li><strong>Past Performance:</strong> Track record and references</li>
+                    <li><strong>Financial Capacity:</strong> Financial stability</li>
+                    <li><strong>Management Approach:</strong> How they'll manage the work</li>
+                    <li><strong>Warranty:</strong> Guarantees provided</li>
+                    <li><strong>Production Capacity:</strong> Ability to meet schedule</li>
+                </ul>
+            </div>
+
+            <div class="exam-tips">
+                <h3><i class="fas fa-exclamation-circle"></i> Selection Tips:</h3>
+                <ul>
+                    <li>Price is important but not the only factor</li>
+                    <li>Consider total value, not just lowest cost</li>
+                    <li>Past performance is strong indicator</li>
+                    <li>Use weighted scoring for objective evaluation</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="module-card">
+        <div class="module-header" onclick="toggleModule(this)">
+            <h2>6. Quick Revision Cheat Sheet</h2>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="module-content">
+            <div class="cheat-sheet">
+                <div class="cheat-item">
+                    <h4>Remember:</h4>
+                    <ul>
+                        <li>3 processes (1 Planning, 1 Executing, 1 M&C)</li>
+                        <li>Buyer = Customer (paying)</li>
+                        <li>Seller = Vendor (providing)</li>
+                        <li>Contract = Legally binding</li>
+                        <li>Procurement closes BEFORE project closes</li>
+                    </ul>
+                </div>
+                <div class="cheat-item">
+                    <h4>Contract Risk:</h4>
+                    <ul>
+                        <li><strong>Fixed Price:</strong> Low buyer risk, High seller risk</li>
+                        <li><strong>Cost Reimbursable:</strong> High buyer risk, Low seller risk</li>
+                        <li><strong>T&M:</strong> Medium risk for both</li>
+                    </ul>
+                </div>
+                <div class="cheat-item">
+                    <h4>Documents:</h4>
+                    <ul>
+                        <li><strong>RFI:</strong> Information about capabilities</li>
+                        <li><strong>RFQ:</strong> Price quote</li>
+                        <li><strong>RFP:</strong> Detailed proposal</li>
+                        <li><strong>IFB:</strong> Sealed bids</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="module-actions">
+        <button class="btn btn-secondary" onclick="markComplete('procurement')">
+            <i class="fas fa-check"></i> Mark as Complete
+        </button>
+        <a href="quiz.html?domain=procurement" class="btn btn-primary">
+            <i class="fas fa-question-circle"></i> Take Quiz
+        </a>
+    </div>
+</section>
+
+
+<!-- ============================================
+     STAKEHOLDER MANAGEMENT - Replace id="stakeholder" section
+     ============================================ -->
+
+<section class="domain-section" id="stakeholder" style="display: none;">
+    <div class="domain-header">
+        <h1><i class="fas fa-user-friends"></i> Stakeholder Management</h1>
+        <p class="domain-description">Identify stakeholders and manage their engagement throughout the project</p>
+    </div>
+
+    <div class="module-card">
+        <div class="module-header" onclick="toggleModule(this)">
+            <h2>1. Overview & Key Concepts</h2>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="module-content">
+            <p><strong>What is Project Stakeholder Management?</strong></p>
+            <p>Stakeholder Management includes processes to identify people, groups, or organizations that could impact or be impacted by the project, and to develop strategies for engaging them.</p>
+            
+            <div class="key-points">
+                <h3>Key Concepts:</h3>
+                <ul>
+                    <li><strong>Stakeholder:</strong> Anyone affected by or who can affect the project</li>
+                    <li><strong>Stakeholder Register:</strong> Document listing all stakeholders</li>
+                    <li><strong>Power/Interest Grid:</strong> Classify stakeholders by power and interest</li>
+                    <li><strong>Engagement Levels:</strong> Unaware, Resistant, Neutral, Supportive, Leading</li>
+                    <li><strong>Stakeholder Engagement:</strong> Working with stakeholders to meet needs</li>
+                    <li><strong>Influence:</strong> Ability to affect project decisions</li>
+                </ul>
+            </div>
+
+            <div class="real-world-example">
+                <h3><i class="fas fa-lightbulb"></i> Real-World Example:</h3>
+                <p>Building a new office: <strong>Stakeholders</strong> = Employees (users), CEO (sponsor), IT team (implementers), neighbors (affected), city (permits). <strong>Power/Interest Grid</strong>: CEO = High power, high interest (manage closely). Neighbors = Low power, high interest (keep informed). Use <strong>stakeholder register</strong> to track all stakeholders and their needs.</p>
+            </div>
+
+            <div class="exam-tips">
+                <h3><i class="fas fa-exclamation-circle"></i> Common Exam Traps:</h3>
+                <ul>
+                    <li>Identify stakeholders EARLY (not just at start)</li>
+                    <li>Stakeholders can be positive or negative</li>
+                    <li>Manage expectations proactively</li>
+                    <li>High power + high interest = Manage closely</li>
+                    <li>Engagement is ongoing, not one-time</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="module-card">
+        <div class="module-header" onclick="toggleModule(this)">
+            <h2>2. Key Processes (4 Total)</h2>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="module-content">
+            <div class="process-table">
+                <h3>Stakeholder Management Processes:</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Process</th>
+                            <th>Process Group</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Identify Stakeholders</td>
+                            <td>Initiating</td>
+                            <td>Identify people/organizations affected by project</td>
+                        </tr>
+                        <tr>
+                            <td>Plan Stakeholder Engagement</td>
+                            <td>Planning</td>
+                            <td>Develop strategies to engage stakeholders</td>
+                        </tr>
+                        <tr>
+                            <td>Manage Stakeholder Engagement</td>
+                            <td>Executing</td>
+                            <td>Communicate and work with stakeholders</td>
+                        </tr>
+                        <tr>
+                            <td>Monitor Stakeholder Engagement</td>
+                            <td>Monitoring & Controlling</td>
+                            <td>Monitor relationships and adjust strategies</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="module-card">
+        <div class="module-header" onclick="toggleModule(this)">
+            <h2>3. Power/Interest Grid</h2>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="module-content">
+            <div class="comparison-table">
+                <h3>Stakeholder Classification:</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Power/Interest</th>
+                            <th>Strategy</th>
+                            <th>Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>High Power, High Interest</strong></td>
+                            <td>Manage Closely</td>
+                            <td>Project sponsor, key executives</td>
+                        </tr>
+                        <tr>
+                            <td><strong>High Power, Low Interest</strong></td>
+                            <td>Keep Satisfied</td>
+                            <td>Senior management not directly involved</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Low Power, High Interest</strong></td>
+                            <td>Keep Informed</td>
+                            <td>End users, affected employees</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Low Power, Low Interest</strong></td>
+                            <td>Monitor</td>
+                            <td>Peripheral stakeholders</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="exam-tips">
+                <h3><i class="fas fa-exclamation-circle"></i> Grid Tips:</h3>
+                <ul>
+                    <li>High Power + High Interest = Most attention (manage closely)</li>
+                    <li>High Power + Low Interest = Keep satisfied (don't bore them)</li>
+                    <li>Low Power + High Interest = Keep informed (they care)</li>
+                    <li>Low Power + Low Interest = Monitor (minimal effort)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="module-card">
+        <div class="module-header" onclick="toggleModule(this)">
+            <h2>4. Engagement Levels</h2>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="module-content">
+            <div class="key-points">
+                <h3>Five Stakeholder Engagement Levels:</h3>
+                <ul>
+                    <li><strong>Unaware:</strong> Unaware of project and potential impacts</li>
+                    <li><strong>Resistant:</strong> Aware but resistant to change</li>
+                    <li><strong>Neutral:</strong> Aware but neither supportive nor resistant</li>
+                    <li><strong>Supportive:</strong> Aware and supportive of project</li>
+                    <li><strong>Leading:</strong> Aware and actively engaged in ensuring success</li>
+                </ul>
+            </div>
+
+            <div class="real-world-example">
+                <h3><i class="fas fa-lightbulb"></i> Example:</h3>
+                <p><strong>Current State:</strong> Department head is Neutral about new system<br>
+                <strong>Desired State:</strong> Move to Supportive<br>
+                <strong>Strategy:</strong> Show benefits, involve in decisions, address concerns<br>
+                <strong>Goal:</strong> Increase engagement level to achieve project success</p>
+            </div>
+
+            <div class="exam-tips">
+                <h3><i class="fas fa-exclamation-circle"></i> Engagement Tips:</h3>
+                <ul>
+                    <li>Assess current and desired engagement levels</li>
+                    <li>Develop strategies to move stakeholders to desired level</li>
+                    <li>Leading stakeholders are champions</li>
+                    <li>Address resistance early</li>
+                    <li>Monitor and adjust strategies continuously</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="module-card">
+        <div class="module-header" onclick="toggleModule(this)">
+            <h2>5. Stakeholder Register</h2>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="module-content">
+            <div class="key-points">
+                <h3>Stakeholder Register Contents:</h3>
+                <ul>
+                    <li><strong>Identification:</strong> Name, role, contact information</li>
+                    <li><strong>Assessment:</strong> Requirements, expectations, influence</li>
+                    <li><strong>Classification:</strong> Internal/external, supporter/resistor</li>
+                    <li><strong>Power/Interest:</strong> Level of authority and interest</li>
+                    <li><strong>Engagement Strategy:</strong> How to engage each stakeholder</li>
+                </ul>
+            </div>
+
+            <div class="exam-tips">
+                <h3><i class="fas fa-exclamation-circle"></i> Register Tips:</h3>
+                <ul>
+                    <li>Created in Identify Stakeholders process</li>
+                    <li>Updated throughout project</li>
+                    <li>Contains sensitive information (control access)</li>
+                    <li>Used to plan communication and engagement</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="module-card">
+        <div class="module-header" onclick="toggleModule(this)">
+            <h2>6. Quick Revision Cheat Sheet</h2>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="module-content">
+            <div class="cheat-sheet">
+                <div class="cheat-item">
+                    <h4>Remember:</h4>
+                    <ul>
+                        <li>4 processes (1 Initiating, 1 Planning, 1 Executing, 1 M&C)</li>
+                        <li>Identify stakeholders EARLY and CONTINUOUSLY</li>
+                        <li>Stakeholder = Anyone who affects or is affected</li>
+                        <li>Manage expectations proactively</li>
+                        <li>Engagement is ongoing process</li>
+                    </ul>
+                </div>
+                <div class="cheat-item">
+                    <h4>Power/Interest Grid:</h4>
+                    <ul>
+                        <li><strong>High/High:</strong> Manage Closely</li>
+                        <li><strong>High/Low:</strong> Keep Satisfied</li>
+                        <li><strong>Low/High:</strong> Keep Informed</li>
+                        <li><strong>Low/Low:</strong> Monitor</li>
+                    </ul>
+                </div>
+                <div class="cheat-item">
+                    <h4>Engagement Levels:</h4>
+                    <ul>
+                        <li>Unaware → Resistant → Neutral → Supportive → Leading</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="module-actions">
+        <button class="btn btn-secondary" onclick="markComplete('stakeholder')">
+            <i class="fas fa-check"></i> Mark as Complete
+        </button>
+        <a href="quiz.html?domain=stakeholder" class="btn btn-primary">
+            <i class="fas fa-question-circle"></i> Take Quiz
+        </a>
+    </div>
+</section>
+
+<!-- ============================================
+     END OF COMPLETE LEARNING CONTENT
+     ============================================ -->
